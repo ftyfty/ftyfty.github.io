@@ -255,7 +255,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fty">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/6721.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -375,7 +375,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fty">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/6721.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -490,6 +490,131 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/02/HEXO-Github-搭建属于自己的博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="为学">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/02/HEXO-Github-搭建属于自己的博客/" itemprop="url">
+                  HEXO+Github,搭建属于自己的博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-02T21:56:15+08:00">
+                2015-07-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>hexo是一款基于Node.js的静态博客框架。</p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>安装node.js（<a href="https://nodejs.org/en/" target="_blank" rel="external">node官网</a>下载对应系统的版本，一路下一步安装即可。）<br>安装git（<a href="https://git-scm.com/" target="_blank" rel="external">git官网</a>下载对应系统的版本，安装即可。）<br>申请github账号（<a href="https://github.com/" target="_blank" rel="external">github</a>）</p>
+<h2 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h2><p>Node和Git都安装好后,首先创建一个文件夹,如blog,用户存放hexo的配置文件,然后进入blog里安装Hexo。<br>Shift+右击 打开命令窗口，执行如下命令安装Hexo：<br><strong>npm install hexo-cli -g</strong><br>执行init命令初始化hexo,命令：<br><strong>hexo init blog</strong><br>下载Hexo需要的文件：<br><strong>npm install</strong><br>启动Hexo:<br><strong>hexo server</strong></p>
+<h2 id="配置github"><a href="#配置github" class="headerlink" title="配置github"></a>配置github</h2><p>建立与你用户名对应的仓库，仓库名必须为【yourUserName(你的用户名).github.io】<br>部署到Github前需要配置_config.yml文件，拉到底部找到下面代码：<br>deploy:<br>  type:<br>将它们修改为如下代码：<br>deploy:<br>  type: git<br>  repo: 你的仓库链接<br>  branch: master<br>执行下面的命令，将markdown文件生成静态网页:<br><strong>hexo generate</strong><br>然后，执行配置命令上传到Github：<br><strong>hexo deploy</strong><br>然后再浏览器中输入<a href="https://ftyfty.github.io" target="_blank" rel="external">https://ftyfty.github.io</a>就行了，我的github的账户叫ftyfty,把这个改成你github的账户名就行了</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>每次部署的步骤，可按以下三步来进行:<br><strong>hexo clean</strong><br><strong>hexo generate</strong><br><strong>hexo deploy</strong><br>本地调试(简写)<br>hexo  g   #生成<br>hexo  s    #启动本地服务，进行文章预览调试<br>常用命令<br>hexo new “postName” #新建文章<br>hexo new page “pageName” #新建页面<br>hexo generate #生成静态页面至public目录<br>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #将.deploy目录部署到GitHub<br>hexo help  # 查看帮助<br>hexo version  #查看Hexo的版本</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -523,7 +648,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/6721.jpg"
                alt="fty" />
           <p class="site-author-name" itemprop="name">fty</p>
            
@@ -535,7 +660,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -580,7 +705,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
