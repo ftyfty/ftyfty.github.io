@@ -1,0 +1,675 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="为学" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="首先我们来了解一下js中的数据类型1.基本数据类型：Undefined、Null、Boolean、Number、String(值类型)2.复杂数据类型：Object(引用类型)(值类型和引用类型的定义是通过数据在内存中的存储方式来确定的)">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中判断数据类型的几种方法">
+<meta property="og:url" content="http://yoursite.com/2016/04/18/JS中判断数据类型的几种方法/index.html">
+<meta property="og:site_name" content="學">
+<meta property="og:description" content="首先我们来了解一下js中的数据类型1.基本数据类型：Undefined、Null、Boolean、Number、String(值类型)2.复杂数据类型：Object(引用类型)(值类型和引用类型的定义是通过数据在内存中的存储方式来确定的)">
+<meta property="og:image" content="http://yoursite.com/img/duix.png">
+<meta property="og:updated_time" content="2017-05-03T13:16:25.231Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS中判断数据类型的几种方法">
+<meta name="twitter:description" content="首先我们来了解一下js中的数据类型1.基本数据类型：Undefined、Null、Boolean、Number、String(值类型)2.复杂数据类型：Object(引用类型)(值类型和引用类型的定义是通过数据在内存中的存储方式来确定的)">
+<meta name="twitter:image" content="http://yoursite.com/img/duix.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/04/18/JS中判断数据类型的几种方法/"/>
+
+
+
+
+
+  <title> JS中判断数据类型的几种方法 | 學 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">學</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/18/JS中判断数据类型的几种方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS中判断数据类型的几种方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-18T21:08:30+08:00">
+                2016-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="首先我们来了解一下js中的数据类型"><a href="#首先我们来了解一下js中的数据类型" class="headerlink" title="首先我们来了解一下js中的数据类型"></a>首先我们来了解一下js中的数据类型</h2><h3 id="1-基本数据类型：Undefined、Null、Boolean、Number、String-值类型"><a href="#1-基本数据类型：Undefined、Null、Boolean、Number、String-值类型" class="headerlink" title="1.基本数据类型：Undefined、Null、Boolean、Number、String(值类型)"></a>1.基本数据类型：Undefined、Null、Boolean、Number、String(值类型)</h3><h3 id="2-复杂数据类型：Object-引用类型"><a href="#2-复杂数据类型：Object-引用类型" class="headerlink" title="2.复杂数据类型：Object(引用类型)"></a>2.复杂数据类型：Object(引用类型)</h3><p>(值类型和引用类型的定义是通过数据在内存中的存储方式来确定的)<br><a id="more"></a></p>
+<h3 id="变量对象与基础数据类型"><a href="#变量对象与基础数据类型" class="headerlink" title="变量对象与基础数据类型"></a>变量对象与基础数据类型</h3><p>JavaScript的执行上下文(context)生成之后，会创建一个叫做变量对象的特殊对象，JavaScript的基础数据类型往往都会保存在变量对象中。</p>
+<h3 id="引用数据类型与堆内存"><a href="#引用数据类型与堆内存" class="headerlink" title="引用数据类型与堆内存"></a>引用数据类型与堆内存</h3><p>引用数据类型的值是保存在堆内存中的对象。JavaScript不允许直接访问堆内存中的位置，因此我们不能直接操作对象的堆内存空间。在操作对象时，实际上是在操作对象的引用而不是实际的对象。因此，引用类型的值都是按引用访问的。这里的引用，我们可以粗浅地理解为保存在变量对象中的一个地址，该地址与堆内存的实际值相关联。当我们要访问堆内存中的引用数据类型时，实际上我们首先是从变量对象中获取了该对象的地址引用（或者地址指针），然后再从堆内存中取得我们需要的数据。</p>
+<p><code>var a1 = 0;   // 变量对象</code><br><code>var a2 = &#39;this is string&#39;; // 变量对象</code><br><code>var a3 = null; // 变量对象</code><br><code>var b = { m: 20 }; // 变量b存在于变量对象中，{m: 20} 作为对象存在于堆内存中</code><br><code>var c = [1, 2, 3]; // 变量c存在于变量对象中，[1, 2, 3] 作为对象存在于堆内存中</code><br><img src="/img/duix.png" alt=""></p>
+<h2 id="判断js中的数据类型有以下几种方法：typeof、instanceof、-constructor、-Object-toString-call-、-type-jquery-type"><a href="#判断js中的数据类型有以下几种方法：typeof、instanceof、-constructor、-Object-toString-call-、-type-jquery-type" class="headerlink" title="判断js中的数据类型有以下几种方法：typeof、instanceof、 constructor、 Object.toString.call()、 $.type()/jquery.type()"></a>判断js中的数据类型有以下几种方法：typeof、instanceof、 constructor、 Object.toString.call()、 $.type()/jquery.type()</h2><h3 id="1-typeof"><a href="#1-typeof" class="headerlink" title="1.typeof"></a>1.typeof</h3><p>var a = “iamstring.”;<br>var b = 222;<br>var c= [1,2,3];<br>var d = new Date();<br>var e = function(){alert(111);};<br>var f = function(){this.name=”22”;};　<br>输出结果：<br>typeof a ————&gt; string<br>typeof b ————&gt; number<br>typeof c ————&gt; object<br>typeof d  ————&gt; object<br>typeof e ————&gt; function<br>typeof f ————&gt; function</p>
+<h3 id="2-instanceof"><a href="#2-instanceof" class="headerlink" title="2.instanceof"></a>2.instanceof</h3><p>instanceof是判断已知对象类型的方法(instanceof 后面一定要是对象类型，并且大小写不能错，该方法适合一些条件选择或分支。)<br>语法： a instanceof b  就是判断 a 是不是b类型的数据<br>var a = “iamstring.”;<br>var b = 222;<br>var c= [1,2,3];<br>var d = new Date();<br>var e = function(){alert(111);};<br>var f = function(){this.name=”22”;};　<br>输出结果：<br>c instanceof Array—————&gt; true<br>d instanceof Date—————&gt; true<br>f instanceof Function ————&gt; true<br>f instanceof function————&gt; false</p>
+<h3 id="3-根据对象的constructor判断"><a href="#3-根据对象的constructor判断" class="headerlink" title="3.根据对象的constructor判断"></a>3.根据对象的constructor判断</h3><p>var a = “iamstring.”;<br>var b = 222;<br>var c= [1,2,3];<br>var d = new Date();<br>var e = function(){alert(111);};<br>var f = function(){this.name=”22”;};　<br>输出结果：<br>c.constructor === Array ———-&gt; true<br>d.constructor === Date ———–&gt; true<br>e.constructor === Function ——-&gt; true<br>注意： constructor 在类继承时会出错<br>function A(){};<br>   function B(){};<br>   A.prototype = new B(); //A继承自B<br>   var aObj = new A();<br>   alert(aObj.constructor === B) ———–&gt; true;<br>   alert(aObj.constructor === A) ———–&gt; false;<br>而instanceof方法不会出现该问题，对象直接继承和间接继承的都会报true：<br>   alert(aObj instanceof B) —————-&gt; true;<br>   alert(aObj instanceof B) —————-&gt; true;<br>言归正传，解决construtor的问题通常是让对象的constructor手动指向自己：<br>   aobj.constructor = A; //将自己的类赋值给对象的constructor属性<br>   alert(aObj.constructor === A) ———–&gt; true;<br>   alert(aObj.constructor === B) ———–&gt; false; //基类不会报true了;</p>
+<h3 id="4-一个繁琐但比较通用方法，使用Object的toString方法＋call"><a href="#4-一个繁琐但比较通用方法，使用Object的toString方法＋call" class="headerlink" title="4.一个繁琐但比较通用方法，使用Object的toString方法＋call()"></a>4.一个繁琐但比较通用方法，使用Object的toString方法＋call()</h3><p>大小写不能写错，比较麻烦，但是它通用<br>var a = “iamstring.”;<br>var b = 222;<br>var c= [1,2,3];<br>var d = new Date();<br>var e = function(){alert(111);};<br>var f = function(){this.name=”22”;};　<br>输出结果：<br>Object.toString.call(a) === ‘[object String]’<br>Object.toString.call(b) === ‘[object Number]’<br>Object.toString.call(c) === ‘[object Array]’<br>Object.toString.call(d) === ‘[object Date]’<br>Object.toString.call(e) === ‘[object Function]’<br>Object.toString.call(f) === ‘[object Function]’</p>
+<h3 id="5-使用jquery里的type方法-jquery-type-type"><a href="#5-使用jquery里的type方法-jquery-type-type" class="headerlink" title="5.使用jquery里的type方法(jquery.type()/$.type())"></a>5.使用jquery里的type方法(jquery.type()/$.type())</h3><p>使用这个的话别忘了引入JQ文件<br>如果对象是undefined或null，则返回相应的“undefined”或“null”。<br>jQuery.type( undefined ) === “undefined”<br>jQuery.type() === “undefined”<br>jQuery.type( window.notDefined ) === “undefined”<br>jQuery.type( null ) === “null”<br>如果对象有一个内部的[[Class]]和一个浏览器的内置对象的 [[Class]] 相同，我们返回相应的 [[Class]] 名字<br>jQuery.type( true ) === “boolean”<br>jQuery.type( 3 ) === “number”<br>jQuery.type( “test” ) === “string”<br>jQuery.type( function(){} ) === “function”<br>jQuery.type( [] ) === “array”<br>jQuery.type( new Date() ) === “date”<br>jQuery.type( new Error() ) === “error” // as of jQuery 1.9<br>jQuery.type( /test/ ) === “regexp”<br>其他一切都将返回它的类型“object”。 </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/18/移动端WEB开发技巧（转）/" rel="next" title="移动端WEB开发技巧（转）">
+                <i class="fa fa-chevron-left"></i> 移动端WEB开发技巧（转）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/18/JS中Object常用的一些属性和方法/" rel="prev" title="JS中Object常用的一些属性和方法">
+                JS中Object常用的一些属性和方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/6721.jpg"
+               alt="fty" />
+          <p class="site-author-name" itemprop="name">fty</p>
+           
+              <p class="site-description motion-element" itemprop="description">自古深情留不住，唯有套路得人心。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先我们来了解一下js中的数据类型"><span class="nav-number">1.</span> <span class="nav-text">首先我们来了解一下js中的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基本数据类型：Undefined、Null、Boolean、Number、String-值类型"><span class="nav-number">1.1.</span> <span class="nav-text">1.基本数据类型：Undefined、Null、Boolean、Number、String(值类型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-复杂数据类型：Object-引用类型"><span class="nav-number">1.2.</span> <span class="nav-text">2.复杂数据类型：Object(引用类型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量对象与基础数据类型"><span class="nav-number">1.3.</span> <span class="nav-text">变量对象与基础数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用数据类型与堆内存"><span class="nav-number">1.4.</span> <span class="nav-text">引用数据类型与堆内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断js中的数据类型有以下几种方法：typeof、instanceof、-constructor、-Object-toString-call-、-type-jquery-type"><span class="nav-number">2.</span> <span class="nav-text">判断js中的数据类型有以下几种方法：typeof、instanceof、 constructor、 Object.toString.call()、 $.type()/jquery.type()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-typeof"><span class="nav-number">2.1.</span> <span class="nav-text">1.typeof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-instanceof"><span class="nav-number">2.2.</span> <span class="nav-text">2.instanceof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-根据对象的constructor判断"><span class="nav-number">2.3.</span> <span class="nav-text">3.根据对象的constructor判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-一个繁琐但比较通用方法，使用Object的toString方法＋call"><span class="nav-number">2.4.</span> <span class="nav-text">4.一个繁琐但比较通用方法，使用Object的toString方法＋call()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-使用jquery里的type方法-jquery-type-type"><span class="nav-number">2.5.</span> <span class="nav-text">5.使用jquery里的type方法(jquery.type()/$.type())</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fty</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
