@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="hexo是一款基于Node.js的静态博客框架。 配置环境安装node.js（node官网下载对应系统的版本，一路下一步安装即可。）安装git（git官网下载对应系统的版本，安装即可。）申请github账号（github）">
+<meta name="description" content="jQuery 的选择器可谓之强大无比，常用的元素查找方法$(“#myELement”) 选择id值等于myElement的元素，id值不能重复在文档中只能有一个id值是myElement所以得到的是唯一的元素$(“div”) 选择所有的div标签元素，返回div元素数组$(“.myClass”) 选择使用myClass类的css的所有元素$(“*”) 选择文档中的所有的元素，可以运用多种的选择方式">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HEXO+Github,搭建属于自己的博客">
-<meta property="og:url" content="http://yoursite.com/2015/07/02/HEXO-Github-搭建属于自己的博客/index.html">
+<meta property="og:title" content="jquery选择器总结">
+<meta property="og:url" content="http://yoursite.com/2015/07/10/jquery选择器总结/index.html">
 <meta property="og:site_name" content="學">
-<meta property="og:description" content="hexo是一款基于Node.js的静态博客框架。 配置环境安装node.js（node官网下载对应系统的版本，一路下一步安装即可。）安装git（git官网下载对应系统的版本，安装即可。）申请github账号（github）">
-<meta property="og:updated_time" content="2017-05-03T13:16:38.093Z">
+<meta property="og:description" content="jQuery 的选择器可谓之强大无比，常用的元素查找方法$(“#myELement”) 选择id值等于myElement的元素，id值不能重复在文档中只能有一个id值是myElement所以得到的是唯一的元素$(“div”) 选择所有的div标签元素，返回div元素数组$(“.myClass”) 选择使用myClass类的css的所有元素$(“*”) 选择文档中的所有的元素，可以运用多种的选择方式">
+<meta property="og:updated_time" content="2017-05-04T14:17:37.477Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HEXO+Github,搭建属于自己的博客">
-<meta name="twitter:description" content="hexo是一款基于Node.js的静态博客框架。 配置环境安装node.js（node官网下载对应系统的版本，一路下一步安装即可。）安装git（git官网下载对应系统的版本，安装即可。）申请github账号（github）">
+<meta name="twitter:title" content="jquery选择器总结">
+<meta name="twitter:description" content="jQuery 的选择器可谓之强大无比，常用的元素查找方法$(“#myELement”) 选择id值等于myElement的元素，id值不能重复在文档中只能有一个id值是myElement所以得到的是唯一的元素$(“div”) 选择所有的div标签元素，返回div元素数组$(“.myClass”) 选择使用myClass类的css的所有元素$(“*”) 选择文档中的所有的元素，可以运用多种的选择方式">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2015/07/02/HEXO-Github-搭建属于自己的博客/"/>
+  <link rel="canonical" href="http://yoursite.com/2015/07/10/jquery选择器总结/"/>
 
 
 
 
 
-  <title> HEXO+Github,搭建属于自己的博客 | 學 </title>
+  <title> jquery选择器总结 | 學 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/02/HEXO-Github-搭建属于自己的博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/10/jquery选择器总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fty">
@@ -271,7 +271,7 @@
             
             
               
-                HEXO+Github,搭建属于自己的博客
+                jquery选择器总结
               
             
           </h1>
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-02T21:56:15+08:00">
-                2015-07-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-10T21:08:30+08:00">
+                2015-07-10
               </time>
             
 
@@ -322,11 +322,15 @@
       
 
       
-        <p>hexo是一款基于Node.js的静态博客框架。</p>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>安装node.js（<a href="https://nodejs.org/en/" target="_blank" rel="external">node官网</a>下载对应系统的版本，一路下一步安装即可。）<br>安装git（<a href="https://git-scm.com/" target="_blank" rel="external">git官网</a>下载对应系统的版本，安装即可。）<br>申请github账号（<a href="https://github.com/" target="_blank" rel="external">github</a>）<br><a id="more"></a></p>
-<h2 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h2><p>Node和Git都安装好后,首先创建一个文件夹,如blog,用户存放hexo的配置文件,然后进入blog里安装Hexo。<br>Shift+右击 打开命令窗口，执行如下命令安装Hexo：<br><strong>npm install hexo-cli -g</strong><br>执行init命令初始化hexo,命令：<br><strong>hexo init blog</strong><br>下载Hexo需要的文件：<br><strong>npm install</strong><br>启动Hexo:<br><strong>hexo server</strong></p>
-<h2 id="配置github"><a href="#配置github" class="headerlink" title="配置github"></a>配置github</h2><p>建立与你用户名对应的仓库，仓库名必须为【yourUserName(你的用户名).github.io】<br>部署到Github前需要配置_config.yml文件，拉到底部找到下面代码：<br>deploy:<br>  type:<br>将它们修改为如下代码：<br>deploy:<br>  type: git<br>  repo: 你的仓库链接<br>  branch: master<br>执行下面的命令，将markdown文件生成静态网页:<br><strong>hexo generate</strong><br>然后，执行配置命令上传到Github：<br><strong>hexo deploy</strong><br>然后再浏览器中输入<a href="https://ftyfty.github.io" target="_blank" rel="external">https://ftyfty.github.io</a>就行了，我的github的账户叫ftyfty,把这个改成你github的账户名就行了</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>每次部署的步骤，可按以下三步来进行:<br><strong>hexo clean</strong><br><strong>hexo generate</strong><br><strong>hexo deploy</strong><br>本地调试(简写)<br>hexo  g   #生成<br>hexo  s    #启动本地服务，进行文章预览调试<br>常用命令<br>hexo new “postName” #新建文章<br>hexo new page “pageName” #新建页面<br>hexo generate #生成静态页面至public目录<br>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #将.deploy目录部署到GitHub<br>hexo help  # 查看帮助<br>hexo version  #查看Hexo的版本</p>
+        <h3 id="jQuery-的选择器可谓之强大无比，常用的元素查找方法"><a href="#jQuery-的选择器可谓之强大无比，常用的元素查找方法" class="headerlink" title="jQuery 的选择器可谓之强大无比，常用的元素查找方法"></a>jQuery 的选择器可谓之强大无比，常用的元素查找方法</h3><p>$(“#myELement”) 选择id值等于myElement的元素，id值不能重复在文档中只能有一个id值是myElement所以得到的是唯一的元素<br>$(“div”) 选择所有的div标签元素，返回div元素数组<br>$(“.myClass”) 选择使用myClass类的css的所有元素<br>$(“*”) 选择文档中的所有的元素，可以运用多种的选择方式进行联合选择：例如$(“#myELement,div,.myclass”)</p>
+<h3 id="层叠选择器："><a href="#层叠选择器：" class="headerlink" title="层叠选择器："></a>层叠选择器：</h3><p>$(“form input”) 选择所有的form元素中的input元素<br>$(“#main &gt; *”) 选择id值为main的所有的子元素<br>$(“label + input”) 选择所有的label元素的下一个input元素节点，经测试选择器返回的是label标签后面直接跟一个input标签的所有input标签元素<br>$(“#prev ~ div”) 同胞选择器，该选择器返回的为id为prev的标签元素的所有的属于同一个父元素的div标签</p>
+<h3 id="基本过滤选择器："><a href="#基本过滤选择器：" class="headerlink" title="基本过滤选择器："></a>基本过滤选择器：</h3><p>$(“tr:first”) 选择所有tr元素的第一个<br>$(“tr:last”) 选择所有tr元素的最后一个<br>$(“input:not(:checked) + span”) //过滤掉：checked的选择器的所有的input元素<br>$(“tr:even”) 选择所有的tr元素的第0，2，4… …个元素（注意：因为所选择的多个元素时为数组，所以序号是从0开始）<br>$(“tr:odd”) 选择所有的tr元素的第1，3，5… …个元素<br>$(“td:eq(2)”) 选择所有的td元素中序号为2的那个td元素<br>$(“td:gt(4)”) 选择td元素中序号大于4的所有td元素<br>$(“td:ll(4)”) 选择td元素中序号小于4的所有的td元素</p>
+<h3 id="内容过滤选择器："><a href="#内容过滤选择器：" class="headerlink" title="内容过滤选择器："></a>内容过滤选择器：</h3><p>$(“div:contains(‘John’)”) 选择所有div中含有John文本的元素<br>$(“td:empty”) 选择所有的为空（也不包括文本节点）的td元素的数组<br>$(“div:has(p)”) 选择所有含有p标签的div元素<br>$(“td:parent”) 选择所有的以td为父节点的元素数组</p>
+<h3 id="可视化过滤选择器："><a href="#可视化过滤选择器：" class="headerlink" title="可视化过滤选择器："></a>可视化过滤选择器：</h3><p>$(“div:hidden”) 选择所有的被hidden的div元素<br>$(“div:visible”) 选择所有的可视化的div元素</p>
+<h3 id="属性过滤选择器："><a href="#属性过滤选择器：" class="headerlink" title="属性过滤选择器："></a>属性过滤选择器：</h3><p>$(“div[id]”) 选择所有含有id属性的div元素<br>$(“input[name=’newsletter’]”) 选择所有的name属性等于’newsletter’的input元素<br>$(“input[name!=’newsletter’]”) 选择所有的name属性不等于’newsletter’的input元素<br>$(“input[name^=’news’]”) 选择所有的name属性以’news’开头的input元素<br>$(“input[name$=’news’]”) 选择所有的name属性以’news’结尾的input元素<br>$(“input[name*=’news’]”) 选择所有的name属性包含’news’的input元素<br>$(“input[id][name$=’news’]”) 可以使用多个属性进行联合选择，该选择器是得到所有的含有id属性并且那么属性以news结尾的元素</p>
+<h3 id="子元素过滤选择器："><a href="#子元素过滤选择器：" class="headerlink" title="子元素过滤选择器："></a>子元素过滤选择器：</h3><p>$(“ul li:nth-child(2)”),$(“ul li:nth-child(odd)”),$(“ul li:nth-child(3n + 1)”)<br>$(“div span:first-child”) 返回所有的div元素的第一个子节点的数组<br>$(“div span:last-child”) 返回所有的div元素的最后一个节点的数组<br>$(“div button:only-child”) 返回所有的div中只有唯一一个子节点的所有子节点的数组</p>
+<h3 id="表单元素选择器："><a href="#表单元素选择器：" class="headerlink" title="表单元素选择器："></a>表单元素选择器：</h3><p>$(“:input”) 选择所有的表单输入元素，包括input, textarea, select 和 button<br>$(“:text”) 选择所有的text input元素<br>$(“:password”) 选择所有的password input元素<br>$(“:radio”) 选择所有的radio input元素<br>$(“:checkbox”) 选择所有的checkbox input元素<br>$(“:submit”) 选择所有的submit input元素<br>$(“:image”) 选择所有的image input元素<br>$(“:reset”) 选择所有的reset input元素<br>$(“:button”) 选择所有的button input元素<br>$(“:file”) 选择所有的file input元素<br>$(“:hidden”) 选择所有类型为hidden的input元素或表单的隐藏域</p>
+<h3 id="表单元素过滤选择器："><a href="#表单元素过滤选择器：" class="headerlink" title="表单元素过滤选择器："></a>表单元素过滤选择器：</h3><p>$(“:enabled”) 选择所有的可操作的表单元素<br>$(“:disabled”) 选择所有的不可操作的表单元素<br>$(“:checked”) 选择所有的被checked的表单元素<br>$(“select option:selected”) 选择所有的select 的子元素中被selected的元素</p>
 
       
     </div>
@@ -363,8 +367,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/04/CSS 实用技巧：制作三角形/" rel="next" title="CSS 实用技巧：制作三角形">
-                <i class="fa fa-chevron-left"></i> CSS 实用技巧：制作三角形
+              <a href="/2015/08/18/Hexo-设置阅读全文/" rel="next" title="Hexo-设置阅读全文">
+                <i class="fa fa-chevron-left"></i> Hexo-设置阅读全文
               </a>
             
           </div>
@@ -372,6 +376,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/07/04/CSS 实用技巧：制作三角形/" rel="prev" title="CSS 实用技巧：制作三角形">
+                CSS 实用技巧：制作三角形 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -482,7 +490,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境"><span class="nav-number">1.</span> <span class="nav-text">配置环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装HEXO"><span class="nav-number">2.</span> <span class="nav-text">安装HEXO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置github"><span class="nav-number">3.</span> <span class="nav-text">配置github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery-的选择器可谓之强大无比，常用的元素查找方法"><span class="nav-number">1.</span> <span class="nav-text">jQuery 的选择器可谓之强大无比，常用的元素查找方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层叠选择器："><span class="nav-number">2.</span> <span class="nav-text">层叠选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本过滤选择器："><span class="nav-number">3.</span> <span class="nav-text">基本过滤选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容过滤选择器："><span class="nav-number">4.</span> <span class="nav-text">内容过滤选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可视化过滤选择器："><span class="nav-number">5.</span> <span class="nav-text">可视化过滤选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性过滤选择器："><span class="nav-number">6.</span> <span class="nav-text">属性过滤选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子元素过滤选择器："><span class="nav-number">7.</span> <span class="nav-text">子元素过滤选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单元素选择器："><span class="nav-number">8.</span> <span class="nav-text">表单元素选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单元素过滤选择器："><span class="nav-number">9.</span> <span class="nav-text">表单元素过滤选择器：</span></a></li></ol></div>
             
 
           </div>

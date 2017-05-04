@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="自古深情留不住，唯有套路得人心。">
+<meta name="description" content="Array()的几种方法 splice(2,3,4)删除数组中任意项(三个参数). splice(1,3)删除从第一项开始的往后三项(两个参数).(splice可以结合pop(),unshift(),push(),shift()来理解) push()在数组的末尾增加一项. unshift()在数组的开头增加一项.">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript里的几种常见的数组方法">
 <meta property="og:url" content="http://yoursite.com/2016/04/26/javascript里的几种常见的数组方法/index.html">
 <meta property="og:site_name" content="學">
-<meta property="og:description" content="自古深情留不住，唯有套路得人心。">
-<meta property="og:updated_time" content="2017-05-03T14:17:41.541Z">
+<meta property="og:description" content="Array()的几种方法 splice(2,3,4)删除数组中任意项(三个参数). splice(1,3)删除从第一项开始的往后三项(两个参数).(splice可以结合pop(),unshift(),push(),shift()来理解) push()在数组的末尾增加一项. unshift()在数组的开头增加一项.">
+<meta property="og:updated_time" content="2017-05-04T13:05:24.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript里的几种常见的数组方法">
-<meta name="twitter:description" content="自古深情留不住，唯有套路得人心。">
+<meta name="twitter:description" content="Array()的几种方法 splice(2,3,4)删除数组中任意项(三个参数). splice(1,3)删除从第一项开始的往后三项(两个参数).(splice可以结合pop(),unshift(),push(),shift()来理解) push()在数组的末尾增加一项. unshift()在数组的开头增加一项.">
 
 
 
@@ -322,7 +322,22 @@
       
 
       
-        
+        <h2 id="Array-的几种方法"><a href="#Array-的几种方法" class="headerlink" title="Array()的几种方法"></a>Array()的几种方法</h2><ol>
+<li>splice(2,3,4)删除数组中任意项(三个参数).</li>
+<li>splice(1,3)删除从第一项开始的往后三项(两个参数).(splice可以结合pop(),unshift(),push(),shift()来理解)</li>
+<li>push()在数组的末尾增加一项.</li>
+<li>unshift()在数组的开头增加一项.</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li>pop()在数组的末尾删除一项.</li>
+<li>shift()在数组的开头删除一项.</li>
+<li>slice(3,5)复制数组(第一个参数代表从第几项开始复制,第二项代表复制的项数,项数不得低于第一个参数的值).</li>
+<li>join(‘+’)将数组中的每一项用指定的分隔符拼接成一个新的字符串.</li>
+<li>reverse()倒叙排列,原有的数组改变.</li>
+<li>indexOf()返回获取项在数组中出现的索引.<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">var</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>];</div><div class="line">    <span class="keyword">var</span> ary1=[<span class="number">1</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">4</span>];</div><div class="line">    <span class="keyword">var</span> ary2=[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"><span class="comment">//    ary.splice(2,3,5);//删除数组中任意项</span></div><div class="line"><span class="comment">//    ary.splice(1,4);//删除从第一项开始开始的往后的四项</span></div><div class="line"><span class="comment">//    可以结合pop(),unshift(),push(),shift()来用</span></div><div class="line"></div><div class="line"><span class="comment">//    ary.push(3);//在数组的末尾增加一项</span></div><div class="line"><span class="comment">//    ary.unshift(3);//在数组的开头增加一项</span></div><div class="line"><span class="comment">//    ary.pop();//在数组的末尾删除一项</span></div><div class="line"><span class="comment">//    ary.shift();//在数组的开头删除一项</span></div><div class="line"><span class="comment">//    var a=ary.slice(3,5)//复制数组</span></div><div class="line"><span class="comment">//    var b=ary.concat(ary1,ary2).concat(1,2,2,2,2,[456654]);//如果没有参数 或者参数为（）空则为赋值数组</span></div><div class="line"><span class="comment">//    var c=ary.join('+')//将数组中的每一项用指定的分隔符拼接成一个新的字符串</span></div><div class="line"><span class="comment">//    ary.reverse();//倒序排序  原有数组改变</span></div><div class="line"><span class="comment">//    var d=ary2.indexOf(4);//返回获取项在数组中出现的索引,若获取项不存在则返回-1</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//        console.log(a);</span></div><div class="line"><span class="comment">//        console.log(b);</span></div><div class="line"><span class="comment">//        console.log(c);</span></div><div class="line"><span class="comment">//        console.log(d);</span></div><div class="line"><span class="comment">//    console.log(ary)</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></li>
+</ol>
+
       
     </div>
 
@@ -368,8 +383,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/18/移动端WEB开发技巧（转）/" rel="prev" title="移动端WEB开发技巧（转）">
-                移动端WEB开发技巧（转） <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/18/JS中判断数据类型的几种方法/" rel="prev" title="JS中判断数据类型的几种方法">
+                JS中判断数据类型的几种方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -417,8 +432,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/6721.jpg"
@@ -433,7 +457,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -462,6 +486,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Array-的几种方法"><span class="nav-number">1.</span> <span class="nav-text">Array()的几种方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
