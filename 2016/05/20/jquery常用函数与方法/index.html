@@ -1,0 +1,691 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="學" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="1.delay(duration,[queueName])设置一个延时来推迟执行队列中之后的项目。jQuery 1.4新增。用于将队列中的函数延时执行。他既可以推迟动画队列的执行，也可以用于自定义队列。duration:可选。规定延迟的速度。可能的值：毫秒 “slow” “fast”queueName:队列名词，默认是Fx，动画队列。">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery常用函数与方法">
+<meta property="og:url" content="http://yoursite.com/2016/05/20/jquery常用函数与方法/index.html">
+<meta property="og:site_name" content="學">
+<meta property="og:description" content="1.delay(duration,[queueName])设置一个延时来推迟执行队列中之后的项目。jQuery 1.4新增。用于将队列中的函数延时执行。他既可以推迟动画队列的执行，也可以用于自定义队列。duration:可选。规定延迟的速度。可能的值：毫秒 “slow” “fast”queueName:队列名词，默认是Fx，动画队列。">
+<meta property="og:updated_time" content="2017-05-07T08:40:51.330Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery常用函数与方法">
+<meta name="twitter:description" content="1.delay(duration,[queueName])设置一个延时来推迟执行队列中之后的项目。jQuery 1.4新增。用于将队列中的函数延时执行。他既可以推迟动画队列的执行，也可以用于自定义队列。duration:可选。规定延迟的速度。可能的值：毫秒 “slow” “fast”queueName:队列名词，默认是Fx，动画队列。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/05/20/jquery常用函数与方法/"/>
+
+
+
+
+
+  <title> jquery常用函数与方法 | 學 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">學</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">hello world !</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/20/jquery常用函数与方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                jquery常用函数与方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-20T21:08:30+08:00">
+                2016-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-delay-duration-queueName"><a href="#1-delay-duration-queueName" class="headerlink" title="1.delay(duration,[queueName])"></a>1.delay(duration,[queueName])</h2><p>设置一个延时来推迟执行队列中之后的项目。<br>jQuery 1.4新增。用于将队列中的函数延时执行。他既可以推迟动画队列的执行，也可以用于自定义队列。<br>duration:可选。规定延迟的速度。可能的值：毫秒 “slow” “fast”<br>queueName:队列名词，默认是Fx，动画队列。</p>
+<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://libs.baidu.com/jquery/1.10.2/jquery.min.js"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"#div1"</span>).delay(<span class="string">"slow"</span>).fadeIn();</div><div class="line">  $(<span class="string">"#div2"</span>).delay(<span class="string">"fast"</span>).fadeIn();</div><div class="line">  $(<span class="string">"#div3"</span>).delay(<span class="number">800</span>).fadeIn();</div><div class="line">  $(<span class="string">"#div4"</span>).delay(<span class="number">2000</span>).fadeIn();</div><div class="line">  $(<span class="string">"#div5"</span>).delay(<span class="number">4000</span>).fadeIn();</div><div class="line"> &#125;);</div><div class="line">&#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This example sets different speed values for the delay() method.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Click to fade in boxes with a delay<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span> <span class="attr">style</span>=<span class="string">"width:90px;height:90px;display:none;background-color:black;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div2"</span> <span class="attr">style</span>=<span class="string">"width:90px;height:90px;display:none;background-color:green;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div3"</span> <span class="attr">style</span>=<span class="string">"width:90px;height:90px;display:none;background-color:blue;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div4"</span> <span class="attr">style</span>=<span class="string">"width:90px;height:90px;display:none;background-color:red;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div5"</span> <span class="attr">style</span>=<span class="string">"width:90px;height:90px;display:none;background-color:purple;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="2-jQuery-on-委派事件实现"><a href="#2-jQuery-on-委派事件实现" class="headerlink" title="2.jQuery on( ) 委派事件实现"></a>2.jQuery on( ) 委派事件实现</h2><p>jquery1.7及其以上版本；jquery1.7版本出现之后用于替代bind()，live()绑定事件方式；<br>live()方法在jquery1.9之后被删除。<br>on() 为指定的元素,添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。使用 on() 方法的事件处理程序适用于当前或未来的元素（比如由脚本创建的新元素）。<br>使用方式:</p>
+<p>$(div).on(event,childselector,data,function)<br>event：必需项；添加到元素的一个或多个事件，例如 click,dblclick等；<br>单事件处理：例如 $(div).on(“click”,childselector,data,function);</p>
+<p><strong>多事件处理：</strong><br>1.利用空格分隔多事件，例如 $(div).on(“click dbclick mouseout”,childseletor,data,function);<br>2.利用大括号灵活定义多事件，例如 $(div).on({event1:function, event2:function, …},childselector);　<br>3.空格相隔方式：绑定较为死板，不能给事件单独绑定函数,适合处理多个事件调用同一函数情况；<br>大括号替代方式：绑定较为灵活，可以给事件单独绑定函数；　<br>childSelector: 可选；需要添加事件处理程序的元素，一般为selector的子元素；　　<br>data：可选；需要传递的参数；<br>function：必需；当绑定事件发生时，需要执行的函数；<br><strong>例子:</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>  <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>jquery中on()绑定事件方式<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></div><div class="line">        .container&#123; width: 300px;height: 300px; border: 1px #ccc solid; background-color: Green;&#125;</div><div class="line">        .btn-test &#123;  border: 1px #ccc solid; padding: 5px 15px; cursor: pointer; &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery-1.8.0.min.js"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">            <span class="comment">/*********添加单个事件处理*********/</span></div><div class="line">            $(<span class="string">".header"</span>).on(<span class="string">"click"</span>, <span class="string">".btn-test"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="comment">//显示隐藏div</span></div><div class="line">                $(<span class="string">".container"</span>).slideToggle();</div><div class="line">            &#125;);</div><div class="line">            <span class="comment">/********添加多个事件处理********/</span></div><div class="line"></div><div class="line">            <span class="comment">//空格相隔方式</span></div><div class="line">            $(<span class="string">".header"</span>).on(<span class="string">"mouseout click"</span>, <span class="string">".btn-test"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="comment">//显示隐藏div</span></div><div class="line">                $(<span class="string">".container"</span>).slideToggle();</div><div class="line">            &#125;);</div><div class="line"></div><div class="line">            <span class="comment">//大括号替代方式</span></div><div class="line">            $(<span class="string">".header"</span>).on(&#123;</div><div class="line">                <span class="string">"mouseout"</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(<span class="string">"这是mouseout事件!"</span>);</div><div class="line">                &#125;,</div><div class="line">                <span class="string">"click"</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    $(<span class="string">".container"</span>).slideToggle();</div><div class="line">                &#125;</div><div class="line">            &#125;, <span class="string">".btn-test"</span>);</div><div class="line"></div><div class="line">            <span class="comment">//删除事件</span></div><div class="line">            $(<span class="string">".header"</span>).off(<span class="string">"click"</span>, <span class="string">".btn-test"</span>);</div><div class="line"></div><div class="line">        &#125;);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"按钮"</span> <span class="attr">class</span>=<span class="string">"btn-test"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="3-JQuery-offset-，position-获得绝对-相对位置的坐标方法"><a href="#3-JQuery-offset-，position-获得绝对-相对位置的坐标方法" class="headerlink" title="3.JQuery offset()，position()获得绝对,相对位置的坐标方法"></a>3.JQuery offset()，position()获得绝对,相对位置的坐标方法</h2><p>获取页面某一元素的绝对X,Y坐标，可以用offset()方法：（body属性设置margin :0;padding:0;）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> X = $(<span class="string">'#id'</span>).offset().top; </div><div class="line"><span class="keyword">var</span> Y = $(<span class="string">'#id'</span>).offset().left;</div></pre></td></tr></table></figure></p>
+<p>例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".box a span"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> $(<span class="string">'body, html'</span>).animate(&#123;<span class="attr">scrollTop</span>:$(<span class="string">'#buy'</span>).offset().top &#125;, <span class="string">'slow'</span>);</div><div class="line"> &#125;);</div><div class="line"><span class="keyword">var</span> left = $(<span class="string">"box"</span>).offset().left;<span class="comment">//元素相当于文档的左边的偏移量</span></div><div class="line"><span class="keyword">var</span> top = $(<span class="string">"box"</span>).offset().top;<span class="comment">//元素相对于文档的上边的偏移量</span></div><div class="line"><span class="keyword">var</span> pleft = $(<span class="string">"box"</span>).scrollLeft();<span class="comment">//元素相对于滚动条左边的偏移量</span></div><div class="line"><span class="keyword">var</span> pTop = $(<span class="string">"box"</span>).scrollTop();<span class="comment">//元素相对于滚动条顶部的偏移量</span></div></pre></td></tr></table></figure></p>
+<p> <strong> 获取相对(父元素)位置: </strong></p>
+<p> 说明下，这里的相对父元素是向上查找其元素设置了positon属性为relative,absolute,fixed属性的，如果最近的父元素没有设置就往上查找，如果没有查找到就是相对于文档的取值，也即是相对于document的top与left值。<br> 例：<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> X = $(<span class="string">'#id'</span>).position().top; </div><div class="line"><span class="keyword">var</span> Y = $(<span class="string">'#id'</span>).position().left;</div></pre></td></tr></table></figure></p>
+<h2 id="4-jquery获取鼠标位置"><a href="#4-jquery获取鼠标位置" class="headerlink" title="4.jquery获取鼠标位置"></a>4.jquery获取鼠标位置</h2> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">           <span class="comment">//e为事件名；</span></div><div class="line">           $(<span class="built_in">document</span>).mousemove(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">               $(<span class="string">"p"</span>).text(<span class="string">"X:"</span> + e.pageX + <span class="string">"   Y:"</span> + e.pageY);</div><div class="line">           &#125;);</div><div class="line"></div><div class="line">       &#125;);</div></pre></td></tr></table></figure>
+<h2 id="5-jquery判断某个元素是否含有某个class-是否存在某些属性，怎样移除某些属性。"><a href="#5-jquery判断某个元素是否含有某个class-是否存在某些属性，怎样移除某些属性。" class="headerlink" title="5.jquery判断某个元素是否含有某个class,是否存在某些属性，怎样移除某些属性。"></a>5.jquery判断某个元素是否含有某个class,是否存在某些属性，怎样移除某些属性。</h2><p>在JQuery编码中,我们会判断元素是否存在某个属性.比如是否包含 class=”box” 的样式呢.JQuery判断就非常简单了,因为有 hasClass这个方法 $(“input[name=box]”).hasClass(“box”) 即可判断.</p>
+<p>如果存在某个属性 $(“#id”).attr(“rel”) 会返回 rel的值,如果不存在 rel属性则会返回”undefined”<br>undefined 就是 undefined类型 , if($(“#id”).attr(“rel”)==”undefined”) 这个判断可能不成立.<br>因为类型不相同.建议使用 if(typeof($(“#id”).attr(“rel”))==”undefined”) 即可。<br>jquery移除某个jquery对象的某个属性： $(“#id”).removeAttr(“style”);</p>
+<h2 id="6-jquery-stop-的用法（清除动画积累的有效方法）"><a href="#6-jquery-stop-的用法（清除动画积累的有效方法）" class="headerlink" title="6.jquery stop()的用法（清除动画积累的有效方法）"></a>6.jquery stop()的用法（清除动画积累的有效方法）</h2><p>1、stop([stopAll], [gotoEnd])方法有两个参数（当然可以不传或直传一个），其中stopAll的意思是清除之后的所有动画。gotoEnd的意思是，执行完当前动画。<br>2、stopAll == true时，停止队列中的所有动画， stopAll ==false时，只停止队列中的当前动画，后续动画继续执行。<br>3、gotoEnd == true时，立即跳到当前动画的末尾， gotoEnd ==false时，停在当前状态。且gotoEnd只有在设置了stopAll的时候才起作用<br>4、在项目中，如果不进行动画队列清理，就会产生动画积累的问题。因此在写入动画时，最好先清除队列中的重复动画。<br>在项目中，例如做下拉二级导航效果，用到jquery的slideDown()与slideUp()方法，当鼠标快速晃动后，如果不进行动画队列清理，就会产生动画积累，出现问题。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".nav li.has_list"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).children(<span class="string">"a"</span>).addClass(<span class="string">"curr"</span>);</div><div class="line">    $(<span class="keyword">this</span>).children(<span class="string">"div"</span>).stop(<span class="literal">true</span>,<span class="literal">true</span>).slideDown(<span class="number">400</span>);                            </div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).children(<span class="string">"a"</span>).removeClass(<span class="string">"curr"</span>);</div><div class="line">    $(<span class="keyword">this</span>).children(<span class="string">"div"</span>).stop(<span class="literal">true</span>,<span class="literal">true</span>).slideUp(<span class="number">400</span>);   </div><div class="line">   &#125;</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<h2 id="7-jquery中的size-方法"><a href="#7-jquery中的size-方法" class="headerlink" title="7.jquery中的size()方法"></a>7.jquery中的size()方法</h2><p>jQuery 对象中元素的个数。<br>这个函数的返回值与 jQuery 对象的’<span title="Core/length">length</span>‘ 属性一致。<br>例如：计算文档中所有图片数量<br>例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test1.jpg"</span>/&gt;</span> <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test2.jpg"</span>/&gt;</span></div><div class="line">$("img").size(); //结果当然是2.</div></pre></td></tr></table></figure></p>
+<h2 id="8-jquery中的-inArray方法"><a href="#8-jquery中的-inArray方法" class="headerlink" title="8.jquery中的$.inArray方法"></a>8.jquery中的$.inArray方法</h2><p>语法：jQuery.inArray( value, array [, fromIndex ] )<br>value:要查找的值，array：一个数组，通过它来查找，fromIndex： 数组索引值，表示从哪里在开始查找。默认值是0，这将查找整个数组。<br>$.inArray()方法类似于JavaScript的原生.indexOf()方法，没有找到匹配元素时它返回-1。如果数组第一个元素匹配value（参数） ，那么$.inArray()返回0。<br>因为JavaScript将0视为false(即 0 == false, 但是 0 !== false)，要检查在array中是否存在value， 你需要检查它是否不等于（或大于）-1。<br>值之间的比较是严格比较（愚人码头注：即，===或!==比较）。下面这段代码返回 -1 (没有找到) ， 因为字符串数组中不可能找到一个数字：<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$.inArray( <span class="number">5</span> + <span class="number">5</span>, [ <span class="string">"8"</span>, <span class="string">"9"</span>, <span class="string">"10"</span>, <span class="number">10</span> + <span class="string">""</span> ] );</div><div class="line">得到的结果是<span class="number">-1</span>，数组中有字符串<span class="string">"10"</span>，但是没有数字<span class="number">10.</span></div></pre></td></tr></table></figure></p>
+<h2 id="9-jquery中的-toArray-方法"><a href="#9-jquery中的-toArray-方法" class="headerlink" title="9.jquery中的$.toArray()方法"></a>9.jquery中的$.toArray()方法</h2><p>toArray() 方法以数组的形式返回 jQuery 选择器匹配的元素<br>例如：将 li 元素转换为数组，然后输出该数组元素的 innerHTML ：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>输出每个列表项的值<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Soda<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">$("button").click(function()&#123;</div><div class="line">  x=$("li").toArray()</div><div class="line">  for (i=0;i<span class="tag">&lt;<span class="name">x.length;i++)</span></span></div><div class="line">    &#123;</div><div class="line">    <span class="attr">alert</span>(<span class="attr">x</span>[<span class="attr">i</span>]<span class="attr">.innerHTML</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="10-jquery的DOM元素方法get"><a href="#10-jquery的DOM元素方法get" class="headerlink" title="10.jquery的DOM元素方法get()"></a>10.jquery的DOM元素方法get()</h2><p>语法：$(div).get(index)<br>get() 方法获得由选择器指定的 DOM 元素。<br>例如：获得第一个 p 元素的名称和值：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  x=$(<span class="string">"p"</span>).get(<span class="number">0</span>);</div><div class="line">  $(<span class="string">"div"</span>).text(x.nodeName + <span class="string">": "</span> + x.innerHTML);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="11-toggleClass-方法"><a href="#11-toggleClass-方法" class="headerlink" title="11.toggleClass()方法"></a>11.toggleClass()方法</h2><p>这个方法的参数接受一个或多个样式类名作为参数。<br>在第一个版本中，如果在匹配的元素集合中的该元素上存在该样式名，则移除它，否则就加上。<br>例如：<br><code>$(&#39;div.tumble&#39;).toggleClass(&#39;bounce&#39;)</code><br>如果.tumble元素上存在class为bounce，则移除；不存在则加上。<br>在第二个版本中，该方法第二个参数是判断样式类名是否被添加还是被删除。如果是true，这添加；如果是false，则移除。<br>例如：<br><code>$( &quot;#foo&quot; ).toggleClass( className, addOrRemove );</code><br>类似于：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ( addOrRemove ) &#123;</div><div class="line">  $( <span class="string">"#foo"</span> ).addClass( className );</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  $( <span class="string">"#foo"</span> ).removeClass( className );</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>从 jQuery 1.4 开始, 如果不将任何参数传递给 .toggleClass() 方法,那么匹配元素上的所有样式会在该方法第一次执行时被移除，第二次执行时被还原，如此往复。同样的，从 jQuery 1.4 开始,可以用一个函数作为参数，返回应该显示的样式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$( <span class="string">"div.foo"</span> ).toggleClass(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> ( $( <span class="keyword">this</span> ).parent().is( <span class="string">".bar"</span> ) ) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"happy"</span>;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"sad"</span>;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>如果匹配元素的父级元素有bar样式类名，这个例子将为<code>&lt;div class=&quot;foo&quot;&gt;</code>元素切换 happy 样式类； 否则他将切换 sad 样式类 。</p>
+<h2 id="12-val-方法"><a href="#12-val-方法" class="headerlink" title="12.val()方法"></a>12.val()方法</h2><p>.val()方法主要用于获取表单元素的值，如input, select 和 textarea。当在一个空集合上调用，它返回undefined。<br>当该集合中第一个元素是一个select-multiple（即，select元素设置了multiple属性），.val()返回一个包含每个选择项值的数组。在jQuery 3.0中， 如果没有选项被选中，它将返回一个空数组；在jQuery 3.0之前的版本中， 它将返回null。<br>对于选择框（select），复选框（checkbox）和单选按钮（radio），可以使用:checked选择器来获取值，如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 在下拉列表中获取所选选项的值</span></div><div class="line">$( <span class="string">"select#foo option:checked"</span> ).val();</div><div class="line"><span class="comment">// 直接从下拉列表中选择值</span></div><div class="line">$( <span class="string">"select#foo"</span> ).val();</div><div class="line"><span class="comment">// 从复选框获取选中值</span></div><div class="line">$( <span class="string">"input[type=checkbox][name=bar]:checked"</span> ).val();</div><div class="line"><span class="comment">// 从一组单选按钮获取选中值</span></div><div class="line">$( <span class="string">"input[type=radio][name=baz]:checked"</span> ).val();</div><div class="line">** 注意: ** 通过 .val() 方法从 &lt;textarea&gt; 元素中获取的值是不含有回车（r）字符的。但是如果该值是通过 XHR 传递给服务器的，回车（r）字符会被保留（或者是被浏览器添加的，但是在原始数据中并不包含回车（r））。可以使用下面的 valHook 方法解决这个问题：</div><div class="line">$.valHooks.textarea = &#123;</div><div class="line">  <span class="attr">get</span>: <span class="function"><span class="keyword">function</span>(<span class="params"> elem </span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> elem.value.replace( <span class="regexp">/\r?\n/g</span>, <span class="string">"\r\n"</span> );</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="13-noConflict-方法"><a href="#13-noConflict-方法" class="headerlink" title="13.noConflict() 方法"></a>13.noConflict() 方法</h2><p>语法：<br><code>jQuery.noConflict(removeAll)</code><br>removeAll：布尔值。指示是否允许彻底将 jQuery 变量还原。<br>noConflict() 方法让渡变量 的jQuery控制权。该方法释放jQuery对的jQuery控制权。该方法释放jQuery对 变量的控制。该方法也可用于为 jQuery 变量规定新的自定义名称。<br>例1，将 $ 引用的对象映射回原始的对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">jQuery.noConflict();</div><div class="line"></div><div class="line">jQuery(<span class="string">"div p"</span>).hide();    <span class="comment">// 使用 jQuery</span></div><div class="line"></div><div class="line">$(<span class="string">"content"</span>).style.display = <span class="string">"none"</span>;    <span class="comment">// 使用其他库的 $()</span></div></pre></td></tr></table></figure></p>
+<p>例2，可以将 jQuery.noConflict() 与简写的 ready 结合，使代码更紧凑：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">jQuery.noConflict()(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">// 使用 jQuery 的代码</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">... <span class="comment">// 其他库使用 $ 做别名的代码</span></div></pre></td></tr></table></figure></p>
+<p>例3，创建一个新的别名用以在接下来的库中使用 jQuery 对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> j = jQuery.noConflict();</div><div class="line"></div><div class="line">j(<span class="string">"div p"</span>).hide();    <span class="comment">// 基于 jQuery 的代码</span></div><div class="line"></div><div class="line">$(<span class="string">"content"</span>).style.display = <span class="string">"none"</span>;    <span class="comment">// 基于其他库的 $() 代码</span></div></pre></td></tr></table></figure></p>
+<p>例4，完全将 jQuery 移到一个新的命名空间：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dom = &#123;&#125;;</div><div class="line">dom.query = jQuery.noConflict(<span class="literal">true</span>);</div><div class="line"></div><div class="line">dom.query(<span class="string">"div p"</span>).hide();    <span class="comment">// 新 jQuery 的代码</span></div><div class="line">$(<span class="string">"content"</span>).style.display = <span class="string">"none"</span>;    <span class="comment">// 另一个库 $() 的代码</span></div><div class="line">jQuery(<span class="string">"div &gt; p"</span>).hide();    <span class="comment">// 另一个版本 jQuery 的代码</span></div></pre></td></tr></table></figure></p>
+<h2 id="14-isWindow-方法"><a href="#14-isWindow-方法" class="headerlink" title="14.$.isWindow()方法"></a>14.$.isWindow()方法</h2><p>判断传入的参数是否为 window对象<br>$.isWindow() 函数用于判断指定参数是否是一个window窗口。<br>语法：$.isWindow( object ) 其中object为任意类型 需要进行判断的任意值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </div><div class="line">    $(<span class="string">"b"</span>).append( <span class="string">""</span> + $.isWindow(<span class="built_in">window</span>) );</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/12/CSS和CSS3常用样式小结/" rel="next" title="CSS和CSS3常用样式小结">
+                <i class="fa fa-chevron-left"></i> CSS和CSS3常用样式小结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/09/js 实现无限加载分页（适合移动端）/" rel="prev" title="js 实现无限加载分页（适合移动端）">
+                js 实现无限加载分页（适合移动端） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/6721.jpg"
+               alt="fty" />
+          <p class="site-author-name" itemprop="name">fty</p>
+           
+              <p class="site-description motion-element" itemprop="description">自古深情留不住，唯有套路得人心。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-delay-duration-queueName"><span class="nav-number">1.</span> <span class="nav-text">1.delay(duration,[queueName])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-jQuery-on-委派事件实现"><span class="nav-number">2.</span> <span class="nav-text">2.jQuery on( ) 委派事件实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-JQuery-offset-，position-获得绝对-相对位置的坐标方法"><span class="nav-number">3.</span> <span class="nav-text">3.JQuery offset()，position()获得绝对,相对位置的坐标方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-jquery获取鼠标位置"><span class="nav-number">4.</span> <span class="nav-text">4.jquery获取鼠标位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-jquery判断某个元素是否含有某个class-是否存在某些属性，怎样移除某些属性。"><span class="nav-number">5.</span> <span class="nav-text">5.jquery判断某个元素是否含有某个class,是否存在某些属性，怎样移除某些属性。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-jquery-stop-的用法（清除动画积累的有效方法）"><span class="nav-number">6.</span> <span class="nav-text">6.jquery stop()的用法（清除动画积累的有效方法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-jquery中的size-方法"><span class="nav-number">7.</span> <span class="nav-text">7.jquery中的size()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-jquery中的-inArray方法"><span class="nav-number">8.</span> <span class="nav-text">8.jquery中的$.inArray方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-jquery中的-toArray-方法"><span class="nav-number">9.</span> <span class="nav-text">9.jquery中的$.toArray()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-jquery的DOM元素方法get"><span class="nav-number">10.</span> <span class="nav-text">10.jquery的DOM元素方法get()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-toggleClass-方法"><span class="nav-number">11.</span> <span class="nav-text">11.toggleClass()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-val-方法"><span class="nav-number">12.</span> <span class="nav-text">12.val()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-noConflict-方法"><span class="nav-number">13.</span> <span class="nav-text">13.noConflict() 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-isWindow-方法"><span class="nav-number">14.</span> <span class="nav-text">14.$.isWindow()方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fty</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

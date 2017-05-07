@@ -1,0 +1,687 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="學" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="1.强制文本显示单行显示语法：white-space:nowrap;让一段文字在固定宽度在一行显示，最后一个字符为省略标记(…)，css样式如下12345div&amp;#123;  white-space:nowrap;  text-overflow:ellipsis;  overflow:hidden;&amp;#125; 多行文本最后省略号：1234567div&amp;#123;  display: -webki">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS和CSS3常用样式小结">
+<meta property="og:url" content="http://yoursite.com/2016/06/12/CSS和CSS3常用样式小结/index.html">
+<meta property="og:site_name" content="學">
+<meta property="og:description" content="1.强制文本显示单行显示语法：white-space:nowrap;让一段文字在固定宽度在一行显示，最后一个字符为省略标记(…)，css样式如下12345div&amp;#123;  white-space:nowrap;  text-overflow:ellipsis;  overflow:hidden;&amp;#125; 多行文本最后省略号：1234567div&amp;#123;  display: -webki">
+<meta property="og:updated_time" content="2017-05-07T10:40:24.164Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS和CSS3常用样式小结">
+<meta name="twitter:description" content="1.强制文本显示单行显示语法：white-space:nowrap;让一段文字在固定宽度在一行显示，最后一个字符为省略标记(…)，css样式如下12345div&amp;#123;  white-space:nowrap;  text-overflow:ellipsis;  overflow:hidden;&amp;#125; 多行文本最后省略号：1234567div&amp;#123;  display: -webki">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/12/CSS和CSS3常用样式小结/"/>
+
+
+
+
+
+  <title> CSS和CSS3常用样式小结 | 學 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">學</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">hello world !</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/12/CSS和CSS3常用样式小结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS和CSS3常用样式小结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-12T21:08:30+08:00">
+                2016-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-强制文本显示"><a href="#1-强制文本显示" class="headerlink" title="1.强制文本显示"></a>1.强制文本显示</h2><p>单行显示语法：white-space:nowrap;<br>让一段文字在固定宽度在一行显示，最后一个字符为省略标记(…)，css样式如下<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">  white-space:nowrap;</div><div class="line">  text-overflow:ellipsis;</div><div class="line">  overflow:hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>多行文本最后省略号：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">  display: -webkit-box; </div><div class="line">  -webkit-line-clamp:2;</div><div class="line">  overflow: hidden; </div><div class="line">  -webkit-box-orient: vertical;</div><div class="line">  text-overflow: ellipsis;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>这里用到了文本溢出显示省略号的，即设置溢出文本显示为省略标记：<br>语法：text-overflow:text-overflow:clip | ellipsis | ellipsis-word（css3新增加的）;<br>clip：表示直接裁切溢出的文本；<br>ellipsis：表示文本溢出时，显示省略标记(…)，省略标记代替最后一个字符；<br>ellipsis-word：表示文本溢出时，也是显示省略标记(…),不同的是，省略标记代替的是最后一个词)</p>
+<h2 id="2-css-ie6、ie7中overflow-hidden无效解决办法"><a href="#2-css-ie6、ie7中overflow-hidden无效解决办法" class="headerlink" title="2.css ie6、ie7中overflow:hidden无效解决办法"></a>2.css ie6、ie7中overflow:hidden无效解决办法</h2><p>产生原因：<br>当父元素的直接子元素或者下级子元素的样式拥有position:relative 属性时，父元素的overflow:hidden 属性就会失效。<br>解决办法：<br>我们在IE 6、7 内发现子元素会超出父元素设定的高度，即使父元素设置了overflow:hidden。<br>解决这个bug很简单，在父元素中使用 *position:relative; 即可解决该bug</p>
+<h2 id="3-CSS-text-transform控制文本的大小写"><a href="#3-CSS-text-transform控制文本的大小写" class="headerlink" title="3.CSS text-transform控制文本的大小写"></a>3.CSS text-transform控制文本的大小写</h2><p>描述：text-transform 属性控制文本的大小写。<br>语法：text-transform:none | capitalize | uppercase | lowercase | inherit<br>none 默认。定义带有小写字母和大写字母的标准的文本。<br>capitalize 文本中的每个单词以大写字母开头。<br>uppercase 定义仅有大写字母。<br>lowercase 定义无大写字母，仅有小写字母。<br>inherit 规定应该从父元素继承 text-transform 属性的值。</p>
+<h2 id="4-letter-spacing字符间距"><a href="#4-letter-spacing字符间距" class="headerlink" title="4.letter-spacing字符间距"></a>4.letter-spacing字符间距</h2><p>letter-spacing 属性增加或减少字符间的空白（字符间距）。<br>例如： letter-spacing: 2px;</p>
+<h2 id="5-textarea去掉右侧滚动条，去掉右下角拖拽"><a href="#5-textarea去掉右侧滚动条，去掉右下角拖拽" class="headerlink" title="5.textarea去掉右侧滚动条，去掉右下角拖拽"></a>5.textarea去掉右侧滚动条，去掉右下角拖拽</h2><p><code>&lt;textarea style= &quot;overflow:hidden; resize:none; &quot;&gt; &lt;/textarea&gt;</code></p>
+<h2 id="6-css中透明度兼容代码"><a href="#6-css中透明度兼容代码" class="headerlink" title="6.css中透明度兼容代码"></a>6.css中透明度兼容代码</h2><p>div{filter: alpha(opacity=80);opacity:0.8;}</p>
+<h2 id="7-text-shadow"><a href="#7-text-shadow" class="headerlink" title="7.text-shadow"></a>7.text-shadow</h2><p><code>text-shadow:0px 0px 0px #333333;</code><br>属性值依次：水平方向位移（支持负值）、垂直方向位移（支持负值）、模糊半径、阴影颜色<br>text-shadow对同一个text，可设置多个阴影，与box-shadow类似，使用逗号”,”分割，前一个设置效果在后一个设置效果之上。</p>
+<h2 id="6-css3设置字体"><a href="#6-css3设置字体" class="headerlink" title="6.css3设置字体"></a>6.css3设置字体</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"> </span></div><div class="line">@font-face</div><div class="line">&#123;</div><div class="line">font-family: myFirstFont;</div><div class="line">src: url('Sansation_Light.ttf'),</div><div class="line">    url('Sansation_Light.eot'); /* IE9+ */</div><div class="line">&#125;</div><div class="line">div</div><div class="line">&#123;</div><div class="line">font-family:myFirstFont;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="7-css强制性换行"><a href="#7-css强制性换行" class="headerlink" title="7. css强制性换行"></a>7. css强制性换行</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">  word-break:break-all; /*支持IE，chrome，FF不支持*/</div><div class="line">  word-wrap:break-word;/*支持IE，chrome，FF*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="8-CSS-first-child-选择器-last-child选择器-nth-child-IE7-8无效，不识别"><a href="#8-CSS-first-child-选择器-last-child选择器-nth-child-IE7-8无效，不识别" class="headerlink" title="8.CSS :first-child 选择器,:last-child选择器,nth-child(IE7,8无效，不识别)"></a>8.CSS :first-child 选择器,:last-child选择器,nth-child(IE7,8无效，不识别)</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">:nth-child(2)选取第几个标签，“2可以是你想要的数字”</div><div class="line">:nth-child(2n)选取偶数标签，2n也可以是even</div><div class="line">:nth-child(2n-1)选取奇数标签，2n-1可以是odd</div><div class="line">:nth-child(3n+1)自定义选取标签，3n+1表示“隔二取一”</div></pre></td></tr></table></figure>
+<h2 id="9-css3实现背景颜色渐变"><a href="#9-css3实现背景颜色渐变" class="headerlink" title="9.css3实现背景颜色渐变"></a>9.css3实现背景颜色渐变</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">background:-webkit-linear-gradient(top,#FFF,#cb1919);</div><div class="line">background:-o-linear-gradient(top,#FFF,#cb1919);</div><div class="line">background:-ms-linear-gradient(top,#FFF,#cb1919);</div><div class="line">background:-moz-linear-gradient(top,#FFF,#cb1919);</div><div class="line">background:linear-gradient(top,#FFF,#cb1919);</div></pre></td></tr></table></figure>
+<p>第一个参数：设置渐变的起始位置<br>第二个参数：设置起始位置的颜色<br>第三个参数：设置终止位置的颜色<br>IE 浏览器<br>IE浏览器实现渐变只能使用IE自己的滤镜去实现<br> <code>filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=＃00ffff,endColorstr=＃9fffff,grandientType=1)</code>;<br>第一个参数：渐变起始位置的颜色<br>第二个参数：渐变终止位置的颜色<br>第三个参数：渐变的类型<br>0 代表竖向渐变  1  代表横向渐变  </p>
+<h2 id="10-媒体查询功能"><a href="#10-媒体查询功能" class="headerlink" title="10.媒体查询功能"></a>10.媒体查询功能</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">一般写法：</div><div class="line">@media screen and (max-width: 960px)&#123;</div><div class="line">    body&#123;</div><div class="line">        background: #000;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>应该有人会发现上面这段代码里面有个screen，他的意思是在告知设备在打印页面时使用衬线字体，在屏幕上显示时用无衬线字体。但是目前我发现很多网站都会直接省略screen,因为你的网站可能不需要考虑用户去打印时，你可以直接这样写：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">@media (max-width: 960px)&#123;</div><div class="line">    body&#123;</div><div class="line">        background: #000;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">``</div><div class="line"></div><div class="line">我们想知道移动设备是不是纵向放置的显示屏，可以这样写：</div><div class="line">`<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">media</span>=<span class="string">"screen and (orientation:portrait)"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span>`</div><div class="line"> 但是上面这个方法，最大的弊端是他会增加页面http的请求次数，增加了页面负担，我们用CSS3把样式都写在一个文件里面才是最佳的方法。</div><div class="line"></div><div class="line"> ## 11.css3水平垂直居中</div><div class="line">```html</div><div class="line">div&#123;</div><div class="line">  display: box; </div><div class="line">  display: -webkit-box; </div><div class="line">  display: -moz-box; </div><div class="line">  -webkit-box-pack:center; </div><div class="line">  -moz-box-pack:center; </div><div class="line">  -webkit-box-align:center; </div><div class="line">  -moz-box-align:center; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="12-box-shadow"><a href="#12-box-shadow" class="headerlink" title="12.box-shadow"></a>12.box-shadow</h2><p>为了兼容各主流浏览器并支持这些主流浏览器的较低版本，在基于Webkit的Chrome和Safari等浏览器上使用box-shadow属性时，我们需要将属性的名称写成-webkit-box-shadow的形式。Firefox浏览器则需要写成-moz-box-shadow的形式。全面的写法：<br>.box-shadow-6{<br>    box-shadow:-10px 0 10px red, /<em>左边阴影</em>/<br>    10px 0 10px yellow, /<em>右边阴影</em>/<br>    0 -10px 10px blue, /<em>顶部阴影</em>/<br>    0 10px 10px green; /<em>底边阴影</em>/<br>} </p>
+<h2 id="13-网页字体设置"><a href="#13-网页字体设置" class="headerlink" title="13.网页字体设置"></a>13.网页字体设置</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">font-family:'YourWebFontName';</div><div class="line">src:url('YourWebFontName.eot'); /* IE9 Compat Modes */</div><div class="line">src:url('YourWebFontName.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */</div><div class="line">    url('YourWebFontName.woff') format('woff'), /* Modern Browsers */</div><div class="line">    url('YourWebFontName.ttf')  format('truetype'), /* Safari, Android, iOS */</div><div class="line">    url('YourWebFontName.svg#YourWebFontName') format('svg'); /* Legacy iOS */&#125;</div></pre></td></tr></table></figure>
+<p><a href="http://www.cnblogs.com/moqiutao/p/5070463.html" target="_blank" rel="external">参考地址</a></p>
+<h2 id="14-关闭手机端横屏或者竖屏自动调整字体大小功能"><a href="#14-关闭手机端横屏或者竖屏自动调整字体大小功能" class="headerlink" title="14.关闭手机端横屏或者竖屏自动调整字体大小功能"></a>14.关闭手机端横屏或者竖屏自动调整字体大小功能</h2><p>ios使用-webkit-text-size-adjust禁止调整字体大小:<br><code>body{-webkit-text-size-adjust: 100%!important;}</code><br>text-size-adjust 设为 none 或者 100% 关闭字体大小自动调整功能。<br>android使用以下代码，该接口只在微信浏览器下有效:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 页面加入这段代码可使Android机器页面不再受到用户字体缩放强制改变大小</div><div class="line"> * 但是会有一个1秒左右的延迟，期间可以考虑通过loading展示</div><div class="line"> * 仅供参考</div><div class="line"> */</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span>(WeixinJSBridge) == <span class="string">"undefined"</span>) &#123;</div><div class="line">        <span class="built_in">document</span>.addEventListener(<span class="string">"WeixinJSBridgeReady"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">            setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                WeixinJSBridge.invoke(<span class="string">'setFontSizeCallback'</span>,&#123;<span class="string">"fontSize"</span>:<span class="number">0</span>&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">                    alert(<span class="built_in">JSON</span>.stringify(res));</div><div class="line">                &#125;);</div><div class="line">            &#125;,<span class="number">0</span>);</div><div class="line">        &#125;);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            WeixinJSBridge.invoke(<span class="string">'setFontSizeCallback'</span>,&#123;<span class="string">"fontSize"</span>:<span class="number">0</span>&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">                alert(<span class="built_in">JSON</span>.stringify(res));</div><div class="line">            &#125;);</div><div class="line">        &#125;,<span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<h2 id="15-禁止ios-长按时不触发系统的菜单，禁止ios-amp-android长按时下载图片"><a href="#15-禁止ios-长按时不触发系统的菜单，禁止ios-amp-android长按时下载图片" class="headerlink" title="15.禁止ios 长按时不触发系统的菜单，禁止ios&amp;android长按时下载图片"></a>15.禁止ios 长按时不触发系统的菜单，禁止ios&amp;android长按时下载图片</h2><p><code>.css{-webkit-touch-callout: none}</code></p>
+<h2 id="16-禁止ios和android用户选中文字"><a href="#16-禁止ios和android用户选中文字" class="headerlink" title="16.禁止ios和android用户选中文字"></a>16.禁止ios和android用户选中文字</h2><p><code>.css{-webkit-user-select:none}</code></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/17/jQuery之插件开发入门/" rel="next" title="jQuery之插件开发入门">
+                <i class="fa fa-chevron-left"></i> jQuery之插件开发入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/20/jquery常用函数与方法/" rel="prev" title="jquery常用函数与方法">
+                jquery常用函数与方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/6721.jpg"
+               alt="fty" />
+          <p class="site-author-name" itemprop="name">fty</p>
+           
+              <p class="site-description motion-element" itemprop="description">自古深情留不住，唯有套路得人心。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-强制文本显示"><span class="nav-number">1.</span> <span class="nav-text">1.强制文本显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-css-ie6、ie7中overflow-hidden无效解决办法"><span class="nav-number">2.</span> <span class="nav-text">2.css ie6、ie7中overflow:hidden无效解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-CSS-text-transform控制文本的大小写"><span class="nav-number">3.</span> <span class="nav-text">3.CSS text-transform控制文本的大小写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-letter-spacing字符间距"><span class="nav-number">4.</span> <span class="nav-text">4.letter-spacing字符间距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-textarea去掉右侧滚动条，去掉右下角拖拽"><span class="nav-number">5.</span> <span class="nav-text">5.textarea去掉右侧滚动条，去掉右下角拖拽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-css中透明度兼容代码"><span class="nav-number">6.</span> <span class="nav-text">6.css中透明度兼容代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-text-shadow"><span class="nav-number">7.</span> <span class="nav-text">7.text-shadow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-css3设置字体"><span class="nav-number">8.</span> <span class="nav-text">6.css3设置字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-css强制性换行"><span class="nav-number">9.</span> <span class="nav-text">7. css强制性换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-CSS-first-child-选择器-last-child选择器-nth-child-IE7-8无效，不识别"><span class="nav-number">10.</span> <span class="nav-text">8.CSS :first-child 选择器,:last-child选择器,nth-child(IE7,8无效，不识别)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-css3实现背景颜色渐变"><span class="nav-number">11.</span> <span class="nav-text">9.css3实现背景颜色渐变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-媒体查询功能"><span class="nav-number">12.</span> <span class="nav-text">10.媒体查询功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-box-shadow"><span class="nav-number">13.</span> <span class="nav-text">12.box-shadow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-网页字体设置"><span class="nav-number">14.</span> <span class="nav-text">13.网页字体设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-关闭手机端横屏或者竖屏自动调整字体大小功能"><span class="nav-number">15.</span> <span class="nav-text">14.关闭手机端横屏或者竖屏自动调整字体大小功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-禁止ios-长按时不触发系统的菜单，禁止ios-amp-android长按时下载图片"><span class="nav-number">16.</span> <span class="nav-text">15.禁止ios 长按时不触发系统的菜单，禁止ios&android长按时下载图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-禁止ios和android用户选中文字"><span class="nav-number">17.</span> <span class="nav-text">16.禁止ios和android用户选中文字</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fty</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

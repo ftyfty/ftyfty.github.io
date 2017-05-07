@@ -1,0 +1,683 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="學" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="下面介绍一下通过jquery和css自定义video播放控件。Html5 Video是现在html5最流行的功能之一,得到了大多数最新版本的浏览器支持.包括IE9,也是如此.不同的浏览器提供了不同的原生态浏览器视频空间.我们制作自定义视频控件为了在所有的浏览器中有一个相同的Html5视频控件而不受默认视频控件的控制.">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery和css自定义video播放控件">
+<meta property="og:url" content="http://yoursite.com/2016/08/06/jquery和css自定义video播放控件/index.html">
+<meta property="og:site_name" content="學">
+<meta property="og:description" content="下面介绍一下通过jquery和css自定义video播放控件。Html5 Video是现在html5最流行的功能之一,得到了大多数最新版本的浏览器支持.包括IE9,也是如此.不同的浏览器提供了不同的原生态浏览器视频空间.我们制作自定义视频控件为了在所有的浏览器中有一个相同的Html5视频控件而不受默认视频控件的控制.">
+<meta property="og:updated_time" content="2017-05-07T14:30:27.838Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery和css自定义video播放控件">
+<meta name="twitter:description" content="下面介绍一下通过jquery和css自定义video播放控件。Html5 Video是现在html5最流行的功能之一,得到了大多数最新版本的浏览器支持.包括IE9,也是如此.不同的浏览器提供了不同的原生态浏览器视频空间.我们制作自定义视频控件为了在所有的浏览器中有一个相同的Html5视频控件而不受默认视频控件的控制.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/06/jquery和css自定义video播放控件/"/>
+
+
+
+
+
+  <title> jquery和css自定义video播放控件 | 學 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">學</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">hello world !</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/06/jquery和css自定义video播放控件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                jquery和css自定义video播放控件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-06T21:08:30+08:00">
+                2016-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>下面介绍一下通过jquery和css自定义video播放控件。<br>Html5 Video是现在html5最流行的功能之一,得到了大多数最新版本的浏览器支持.包括IE9,也是如此.不同的浏览器提供了不同的原生态浏览器视频空间.我们制作自定义视频控件为了在所有的浏览器中有一个相同的Html5视频控件而不受默认视频控件的控制.<br><a id="more"></a><br>实际上,自定义视频控件并不困难.本文将告诉你如何用jQuery自定义视频控件,希望对你有用!</p>
+<h2 id="HTML5-Video-基础标签"><a href="#HTML5-Video-基础标签" class="headerlink" title="HTML5 Video 基础标签　　"></a>HTML5 Video 基础标签　　</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;video id=&quot;myVideo&quot; controls poster=&quot;video.jpg&quot; width=&quot;600&quot; height=&quot;400&quot; &gt;</div><div class="line">    &lt;source src=&quot;video.mp4&quot; type=&quot;video/mp4&quot; /&gt;</div><div class="line">    &lt;source src=&quot;video.webm&quot; type=&quot;video/webM&quot; /&gt;</div><div class="line">    &lt;source src=&quot;video.ogv&quot; type=&quot;video/ogg&quot; /&gt;</div><div class="line">    &lt;p&gt;Your browser does not support the video tag.&lt;/p&gt;</div><div class="line">&lt;/video&gt;</div></pre></td></tr></table></figure>
+<p>幸运的是HTML5 Video 的Api可以用JavaScript访问,并使用他们来作为控制视频的媒介.<br>　　在编码之前让我简单的介绍一下jQuery是如何获取video标签的.<br>　　在JavaScript中我们使用getElementById(‘videoID’)来获取Video标签,作为结果,我们会获取到一个Dom对象.但是这不是等价的jQuery对象.$(“videoID”)会返回一个jQuery对象.不是Dom对象.这就是为什么在将其转换为Dom对象之前我们不能直接使用jQuery选择器调用/使用Html5 Video的Dom属性和功能.　　<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//return a DOM object</div><div class="line">var video = document.getElementById(&apos;videoID&apos;); //or</div><div class="line">var video = $(&apos;#videoID&apos;).get(0); //or</div><div class="line">var video = $(&apos;#videoID&apos;)[0];</div><div class="line"> </div><div class="line">//return a jQuery object</div><div class="line">var video = $(&apos;#videoID&apos;);</div></pre></td></tr></table></figure></p>
+<h2 id="Video-Play-Pause-Controls-播放-暂停-按钮"><a href="#Video-Play-Pause-Controls-播放-暂停-按钮" class="headerlink" title="Video Play/Pause Controls 播放/暂停 按钮"></a>Video Play/Pause Controls 播放/暂停 按钮</h2><p>好的,这是所有的介绍.现在让我们来编码.首先,我们要创建一个简单的播放/暂停按钮.　　<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;control&quot;&gt;</div><div class="line">    &lt;a href=&quot;#&quot; class=&quot;btnPlay&quot;&gt;Play/Pause&lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>我们可以轻松的控制Html5 Video的播放与暂停状态.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//Play/Pause control clicked</div><div class="line">$(&apos;.btnPlay&apos;).on(&apos;click&apos;, function() &#123;</div><div class="line">    if(video[0].paused) &#123;</div><div class="line">        video[0].play();</div><div class="line">    &#125;</div><div class="line">    else &#123;</div><div class="line">        video[0].pause();</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="显示视频播放时间和持续时间"><a href="#显示视频播放时间和持续时间" class="headerlink" title="显示视频播放时间和持续时间"></a>显示视频播放时间和持续时间</h2><p>Html5 Video支持视频回放.这里我们要显示视频的当前播放时间和总时间.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;progressTime&quot;&gt;</div><div class="line">   Current play time: &lt;span class=&quot;current&quot;&gt;&lt;/span&gt;</div><div class="line">   Video duration: &lt;span class=&quot;duration&quot;&gt;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>为了得到视频的总时间,我们要确保视频元数据已经加载.这个时候我们要用到Html5 Video的loadedmetadata事件.<br>对于当前的视频播放时间.我们可以用Html5 Video timeupdate事件来保证他的更新.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//get HTML5 video time duration</div><div class="line">video.on(&apos;loadedmetadata&apos;, function() &#123;</div><div class="line">   $(&apos;.duration&apos;).text(video[0].duration);</div><div class="line">&#125;);</div><div class="line"> </div><div class="line">//update HTML5 video current play time</div><div class="line">video.on(&apos;timeupdate&apos;, function() &#123;</div><div class="line">   $(&apos;.current&apos;).text(video[0].currentTime);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="视频进度条"><a href="#视频进度条" class="headerlink" title="视频进度条"></a>视频进度条</h2><p>在这里我们将会把当前播放时间和总的时间长度转换为更人性化的进度条.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.progressBar</div><div class="line">&#123;</div><div class="line">    position: relative;</div><div class="line">    width: 100%;</div><div class="line">    height: height:10px;</div><div class="line">    backgroud-color: #000;</div><div class="line">&#125;</div><div class="line">.timeBar</div><div class="line">&#123;</div><div class="line">    position: absolute;</div><div class="line">    top: 0;</div><div class="line">    left: 0;</div><div class="line">    width: 0;</div><div class="line">    height: 100%;</div><div class="line">    background-color: #ccc;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div class=&quot;progressBar&quot;&gt;</div><div class="line">    &lt;div class=&quot;timeBar&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>下面的js就是通过视频的总时间与当前时间的计算，获得播放进度条。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//get HTML5 video time duration</div><div class="line">video.on(&apos;loadedmetadata&apos;, function() &#123;</div><div class="line">   $(&apos;.duration&apos;).text(video[0].duration));</div><div class="line">&#125;);</div><div class="line"> </div><div class="line">//update HTML5 video current play time</div><div class="line">video.on(&apos;timeupdate&apos;, function() &#123;</div><div class="line">   var currentPos = video[0].currentTime; //Get currenttime</div><div class="line">   var maxduration = video[0].duration; //Get video duration</div><div class="line">   var percentage = 100 * currentPos / maxduration; //in %</div><div class="line">   $(&apos;.timeBar&apos;).css(&apos;width&apos;, percentage+&apos;%&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>下面实现播放进度条的拖拽，来播放视频<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">var timeDrag = false;   /* Drag status */</div><div class="line">$(&apos;.progressBar&apos;).mousedown(function(e) &#123;</div><div class="line">    timeDrag = true;</div><div class="line">    updatebar(e.pageX);</div><div class="line">&#125;);</div><div class="line">$(document).mouseup(function(e) &#123;</div><div class="line">    if(timeDrag) &#123;</div><div class="line">        timeDrag = false;</div><div class="line">        updatebar(e.pageX);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">$(document).mousemove(function(e) &#123;</div><div class="line">    if(timeDrag) &#123;</div><div class="line">        updatebar(e.pageX);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"> </div><div class="line">//update Progress Bar control</div><div class="line">var updatebar = function(x) &#123;</div><div class="line">    var progress = $(&apos;.progressBar&apos;);</div><div class="line">    var maxduration = video[0].duration; //Video duraiton</div><div class="line">    var position = x - progress.offset().left; //Click pos</div><div class="line">    var percentage = 100 * position / progress.width();</div><div class="line"> </div><div class="line">    //Check within range</div><div class="line">    if(percentage &gt; 100) &#123;</div><div class="line">        percentage = 100;</div><div class="line">    &#125;</div><div class="line">    if(percentage &lt; 0) &#123;</div><div class="line">        percentage = 0;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    //Update progress bar and video currenttime</div><div class="line">    $(&apos;.timeBar&apos;).css(&apos;width&apos;, percentage+&apos;%&apos;);</div><div class="line">    video[0].currentTime = maxduration * percentage / 100;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="进阶-显示缓冲栏"><a href="#进阶-显示缓冲栏" class="headerlink" title="进阶-显示缓冲栏"></a>进阶-显示缓冲栏</h2><p>我们需要给视频制作一个缓冲栏让用户知道视频加载了多少.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.progressBar &#123;</div><div class="line">   position: relative;</div><div class="line">   width: 100%;</div><div class="line">   height: height:10px;</div><div class="line">   backgroud-color: #000;</div><div class="line">&#125;</div><div class="line">.bufferBar &#123;</div><div class="line">   position: absolute;</div><div class="line">   top: 0;</div><div class="line">   left: 0;</div><div class="line">   width: 0;</div><div class="line">   height: 100%;</div><div class="line">   background-color: #ccc;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div class=&quot;progressBar&quot;&gt;</div><div class="line">   &lt;div class=&quot;bufferBar&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>Html5 Video缓冲属性将返回一个对象的缓存范围.因此,我们将使用缓存数据的最后一个值.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//loop to get HTML5 video buffered data</div><div class="line">var startBuffer = function() &#123;</div><div class="line">   var maxduration = video[0].duration;</div><div class="line">   var currentBuffer = video[0].buffered.end(0);</div><div class="line">   var percentage = 100 * currentBuffer / maxduration;</div><div class="line">   $(&apos;.bufferBar&apos;).css(&apos;width&apos;, percentage+&apos;%&apos;);</div><div class="line"> </div><div class="line">   if(currentBuffer &lt; maxduration) &#123;</div><div class="line">      setTimeout(startBuffer, 500);</div><div class="line">   &#125;</div><div class="line">&#125;;</div><div class="line">setTimeout(startBuffer, 500);</div></pre></td></tr></table></figure></p>
+<h2 id="音量控制"><a href="#音量控制" class="headerlink" title="音量控制"></a>音量控制</h2><p>现在,我们要增加声音控制.有两种不同的音量控制方法.静音按钮/音量栏<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;#&quot; class=&quot;muted&quot; &gt;Mute/Unmute&lt;/a&gt;</div><div class="line">&lt;div class=&quot;volumeBar&quot;&gt;</div><div class="line">   &lt;div class=&quot;volume&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>js:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//Mute/Unmute control clicked</div><div class="line">$(&apos;.muted&apos;).click(function() &#123;</div><div class="line">   video[0].muted = !video[0].muted;</div><div class="line">   return false;</div><div class="line">&#125;);</div><div class="line"> </div><div class="line">//Volume control clicked</div><div class="line">$(&apos;.volumeBar&apos;).on(&apos;mousedown&apos;, function(e) &#123;</div><div class="line">   var position = e.pageX - volume.offset().left;</div><div class="line">   var percentage = 100 * position / volume.width();</div><div class="line">   $(&apos;.volumeBar&apos;).css(&apos;width&apos;, percentage+&apos;%&apos;);</div><div class="line">   video[0].volume = percentage / 100;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="快进-快退-倒带控制"><a href="#快进-快退-倒带控制" class="headerlink" title="快进/快退 倒带控制"></a>快进/快退 倒带控制</h2><p>Html5 Video支持播放速度的改变.我们可以使用playbackrate属性来控制.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;control&quot;&gt;</div><div class="line">   &lt;a href=&quot;#&quot; class=&quot;ff&quot;&gt;Fast Forward&lt;/a&gt;</div><div class="line">   &lt;a href=&quot;#&quot; class=&quot;rw&quot;&gt;Rewind&lt;/a&gt;</div><div class="line">   &lt;a href=&quot;#&quot; class=&quot;sl&quot;&gt;Slow Motion&lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>不幸的是FireFox不支持playbackrate属性.以及有些版本的chrome浏览器不支持负值(倒带).到目前为止,只有Safri浏览器完全支持.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/Fast forward control</div><div class="line">$(&apos;.ff&apos;).on(&apos;click&apos;, function() &#123;</div><div class="line">   video[0].playbackrate = 3;</div><div class="line">   return false;</div><div class="line">&#125;);</div><div class="line"> </div><div class="line">//Rewind control</div><div class="line">$(&apos;.rw&apos;).on(&apos;click&apos;, function() &#123;</div><div class="line">   video[0].playbackrate = -3;</div><div class="line">   return false;</div><div class="line">&#125;);</div><div class="line"> </div><div class="line">//Slow motion control</div><div class="line">$(&apos;.sl&apos;).on(&apos;click&apos;, function() &#123;</div><div class="line">   video[0].playbackrate = 0.5;</div><div class="line">   return false;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>除了主要的控制插件.还可以做一些额外的控制.例如全屏播放<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(&apos;.fullscreen&apos;).on(&apos;click&apos;, function() &#123;</div><div class="line">   //For Webkit</div><div class="line">   video[0].webkitEnterFullscreen();</div><div class="line"> </div><div class="line">   //For Firefox</div><div class="line">   video[0].mozRequestFullScreen();</div><div class="line"> </div><div class="line">   return false;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>开灯关灯控制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">$(&apos;.btnLight&apos;).click(function() &#123;</div><div class="line">   if($(this).hasClass(&apos;on&apos;)) &#123;</div><div class="line">      $(this).removeClass(&apos;on&apos;);</div><div class="line">      $(&apos;body&apos;).append(&apos;&lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;&apos;);</div><div class="line">      $(&apos;.overlay&apos;).css(&#123;</div><div class="line">         &apos;position&apos;:&apos;absolute&apos;,</div><div class="line">         &apos;width&apos;:100+&apos;%&apos;,</div><div class="line">         &apos;height&apos;:$(document).height(),</div><div class="line">         &apos;background&apos;:&apos;#000&apos;,</div><div class="line">         &apos;opacity&apos;:0.9,</div><div class="line">         &apos;top&apos;:0,</div><div class="line">         &apos;left&apos;:0,</div><div class="line">         &apos;z-index&apos;:999</div><div class="line">      &#125;);</div><div class="line">      $(&apos;#myVideo&apos;).css(&#123;</div><div class="line">         &apos;z-index&apos;:1000</div><div class="line">      &#125;);</div><div class="line">   &#125;</div><div class="line">   else &#123;</div><div class="line">      $(this).addClass(&apos;on&apos;);</div><div class="line">      $(&apos;.overlay&apos;).remove();</div><div class="line">   &#125;</div><div class="line">   return false;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><a href="http://www.inwebson.com/html5/custom-html5-video-controls-with-jquery/#comment-form" target="_blank" rel="external">原文地址</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/10/$.ajax方法详解及实例/" rel="next" title="$.ajax()方法详解及实例">
+                <i class="fa fa-chevron-left"></i> $.ajax()方法详解及实例
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/10/html5 实现video标签的自定义播放进度条/" rel="prev" title="html5 实现video标签的自定义播放进度条">
+                html5 实现video标签的自定义播放进度条 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/6721.jpg"
+               alt="fty" />
+          <p class="site-author-name" itemprop="name">fty</p>
+           
+              <p class="site-description motion-element" itemprop="description">自古深情留不住，唯有套路得人心。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-Video-基础标签"><span class="nav-number">1.</span> <span class="nav-text">HTML5 Video 基础标签　　</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Video-Play-Pause-Controls-播放-暂停-按钮"><span class="nav-number">2.</span> <span class="nav-text">Video Play/Pause Controls 播放/暂停 按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示视频播放时间和持续时间"><span class="nav-number">3.</span> <span class="nav-text">显示视频播放时间和持续时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视频进度条"><span class="nav-number">4.</span> <span class="nav-text">视频进度条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶-显示缓冲栏"><span class="nav-number">5.</span> <span class="nav-text">进阶-显示缓冲栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#音量控制"><span class="nav-number">6.</span> <span class="nav-text">音量控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快进-快退-倒带控制"><span class="nav-number">7.</span> <span class="nav-text">快进/快退 倒带控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">8.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fty</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="为学" />
+  <meta name="keywords" content="學" />
 
 
 
@@ -172,7 +172,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。</p>
+        <p class="site-subtitle">hello world !</p>
       
   </div>
 
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/10/jquery选择器总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/12/CSS和CSS3常用样式小结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fty">
@@ -272,8 +272,8 @@
             
               
                 
-                <a class="post-title-link" href="/2015/07/10/jquery选择器总结/" itemprop="url">
-                  jquery选择器总结
+                <a class="post-title-link" href="/2016/06/12/CSS和CSS3常用样式小结/" itemprop="url">
+                  CSS和CSS3常用样式小结
                 </a>
               
             
@@ -289,8 +289,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-10T21:08:30+08:00">
-                2015-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-12T21:08:30+08:00">
+                2016-06-12
               </time>
             
 
@@ -326,139 +326,11 @@
 
       
         
-          
-            <h3 id="jQuery-的选择器可谓之强大无比，常用的元素查找方法"><a href="#jQuery-的选择器可谓之强大无比，常用的元素查找方法" class="headerlink" title="jQuery 的选择器可谓之强大无比，常用的元素查找方法"></a>jQuery 的选择器可谓之强大无比，常用的元素查找方法</h3><p>$(“#myELement”) 选择id值等于myElement的元素，id值不能重复在文档中只能有一个id值是myElement所以得到的是唯一的元素<br>$(“div”) 选择所有的div标签元素，返回div元素数组<br>$(“.myClass”) 选择使用myClass类的css的所有元素<br>$(“*”) 选择文档中的所有的元素，可以运用多种的选择方式进行联合选择：例如$(“#myELement,div,.myclass”)</p>
-<h3 id="层叠选择器："><a href="#层叠选择器：" class="headerlink" title="层叠选择器："></a>层叠选择器：</h3><p>$(“form input”) 选择所有的form元素中的input元素<br>$(“#main &gt; *”) 选择id值为main的所有的子元素<br>$(“label + input”) 选择所有的label元素的下一个input元素节点，经测试选择器返回的是label标签后面直接跟一个input标签的所有input标签元素<br>$(“#prev ~ div”) 同胞选择器，该选择器返回的为id为prev的标签元素的所有的属于同一个父元素的div标签</p>
-<h3 id="基本过滤选择器："><a href="#基本过滤选择器：" class="headerlink" title="基本过滤选择器："></a>基本过滤选择器：</h3><p>$(“tr:first”) 选择所有tr元素的第一个<br>$(“tr:last”) 选择所有tr元素的最后一个<br>$(“input:not(:checked) + span”) //过滤掉：checked的选择器的所有的input元素<br>$(“tr:even”) 选择所有的tr元素的第0，2，4… …个元素（注意：因为所选择的多个元素时为数组，所以序号是从0开始）<br>$(“tr:odd”) 选择所有的tr元素的第1，3，5… …个元素<br>$(“td:eq(2)”) 选择所有的td元素中序号为2的那个td元素<br>$(“td:gt(4)”) 选择td元素中序号大于4的所有td元素<br>$(“td:ll(4)”) 选择td元素中序号小于4的所有的td元素</p>
-<h3 id="内容过滤选择器："><a href="#内容过滤选择器：" class="headerlink" title="内容过滤选择器："></a>内容过滤选择器：</h3><p>$(“div:contains(‘John’)”) 选择所有div中含有John文本的元素<br>$(“td:empty”) 选择所有的为空（也不包括文本节点）的td元素的数组<br>$(“div:has(p)”) 选择所有含有p标签的div元素<br>$(“td:parent”) 选择所有的以td为父节点的元素数组</p>
-<h3 id="可视化过滤选择器："><a href="#可视化过滤选择器：" class="headerlink" title="可视化过滤选择器："></a>可视化过滤选择器：</h3><p>$(“div:hidden”) 选择所有的被hidden的div元素<br>$(“div:visible”) 选择所有的可视化的div元素</p>
-<h3 id="属性过滤选择器："><a href="#属性过滤选择器：" class="headerlink" title="属性过滤选择器："></a>属性过滤选择器：</h3><p>$(“div[id]”) 选择所有含有id属性的div元素<br>$(“input[name=’newsletter’]”) 选择所有的name属性等于’newsletter’的input元素<br>$(“input[name!=’newsletter’]”) 选择所有的name属性不等于’newsletter’的input元素<br>$(“input[name^=’news’]”) 选择所有的name属性以’news’开头的input元素<br>$(“input[name$=’news’]”) 选择所有的name属性以’news’结尾的input元素<br>$(“input[name*=’news’]”) 选择所有的name属性包含’news’的input元素<br>$(“input[id][name$=’news’]”) 可以使用多个属性进行联合选择，该选择器是得到所有的含有id属性并且那么属性以news结尾的元素</p>
-<h3 id="子元素过滤选择器："><a href="#子元素过滤选择器：" class="headerlink" title="子元素过滤选择器："></a>子元素过滤选择器：</h3><p>$(“ul li:nth-child(2)”),$(“ul li:nth-child(odd)”),$(“ul li:nth-child(3n + 1)”)<br>$(“div span:first-child”) 返回所有的div元素的第一个子节点的数组<br>$(“div span:last-child”) 返回所有的div元素的最后一个节点的数组<br>$(“div button:only-child”) 返回所有的div中只有唯一一个子节点的所有子节点的数组</p>
-<h3 id="表单元素选择器："><a href="#表单元素选择器：" class="headerlink" title="表单元素选择器："></a>表单元素选择器：</h3><p>$(“:input”) 选择所有的表单输入元素，包括input, textarea, select 和 button<br>$(“:text”) 选择所有的text input元素<br>$(“:password”) 选择所有的password input元素<br>$(“:radio”) 选择所有的radio input元素<br>$(“:checkbox”) 选择所有的checkbox input元素<br>$(“:submit”) 选择所有的submit input元素<br>$(“:image”) 选择所有的image input元素<br>$(“:reset”) 选择所有的reset input元素<br>$(“:button”) 选择所有的button input元素<br>$(“:file”) 选择所有的file input元素<br>$(“:hidden”) 选择所有类型为hidden的input元素或表单的隐藏域</p>
-<h3 id="表单元素过滤选择器："><a href="#表单元素过滤选择器：" class="headerlink" title="表单元素过滤选择器："></a>表单元素过滤选择器：</h3><p>$(“:enabled”) 选择所有的可操作的表单元素<br>$(“:disabled”) 选择所有的不可操作的表单元素<br>$(“:checked”) 选择所有的被checked的表单元素<br>$(“select option:selected”) 选择所有的select 的子元素中被selected的元素</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/04/CSS 实用技巧：制作三角形/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fty">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/6721.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="學">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/07/04/CSS 实用技巧：制作三角形/" itemprop="url">
-                  CSS 实用技巧：制作三角形
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-04T21:08:30+08:00">
-                2015-07-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="html代码如下："><a href="#html代码如下：" class="headerlink" title="html代码如下："></a>html代码如下：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"arrow-up"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"arrow-down"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"arrow-left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"arrow-right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+          <h2 id="1-强制文本显示"><a href="#1-强制文本显示" class="headerlink" title="1.强制文本显示"></a>1.强制文本显示</h2><p>单行显示语法：white-space:nowrap;<br>让一段文字在固定宽度在一行显示，最后一个字符为省略标记(…)，css样式如下<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">  white-space:nowrap;</div><div class="line">  text-overflow:ellipsis;</div><div class="line">  overflow:hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>多行文本最后省略号：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">  display: -webkit-box; </div><div class="line">  -webkit-line-clamp:2;</div><div class="line">  overflow: hidden; </div><div class="line">  -webkit-box-orient: vertical;</div><div class="line">  text-overflow: ellipsis;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/07/04/CSS 实用技巧：制作三角形/#more" rel="contents">
+            <a class="btn" href="/2016/06/12/CSS和CSS3常用样式小结/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -504,7 +376,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/02/HEXO-Github-搭建属于自己的博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/20/jquery常用函数与方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fty">
@@ -526,8 +398,8 @@
             
               
                 
-                <a class="post-title-link" href="/2015/07/02/HEXO-Github-搭建属于自己的博客/" itemprop="url">
-                  HEXO+Github,搭建属于自己的博客
+                <a class="post-title-link" href="/2016/05/20/jquery常用函数与方法/" itemprop="url">
+                  jquery常用函数与方法
                 </a>
               
             
@@ -543,8 +415,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-02T21:56:15+08:00">
-                2015-07-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-20T21:08:30+08:00">
+                2016-05-20
               </time>
             
 
@@ -580,11 +452,770 @@
 
       
         
-          <p>hexo是一款基于Node.js的静态博客框架。</p>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>安装node.js（<a href="https://nodejs.org/en/">node官网</a>下载对应系统的版本，一路下一步安装即可。）<br>安装git（<a href="https://git-scm.com/">git官网</a>下载对应系统的版本，安装即可。）<br>申请github账号（<a href="https://github.com/">github</a>）<br>
+          <h2 id="1-delay-duration-queueName"><a href="#1-delay-duration-queueName" class="headerlink" title="1.delay(duration,[queueName])"></a>1.delay(duration,[queueName])</h2><p>设置一个延时来推迟执行队列中之后的项目。<br>jQuery 1.4新增。用于将队列中的函数延时执行。他既可以推迟动画队列的执行，也可以用于自定义队列。<br>duration:可选。规定延迟的速度。可能的值：毫秒 “slow” “fast”<br>queueName:队列名词，默认是Fx，动画队列。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/07/02/HEXO-Github-搭建属于自己的博客/#more" rel="contents">
+            <a class="btn" href="/2016/05/20/jquery常用函数与方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/09/js 实现无限加载分页（适合移动端）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/09/js 实现无限加载分页（适合移动端）/" itemprop="url">
+                  js 实现无限加载分页（适合移动端）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-09T21:08:30+08:00">
+                2016-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>原理：当滚动条到达底部时，执行下一页内容。</p>
+<p>判断条件需要理解三个概念：<br>    1.scrollHeight 真实内容的高度<br>    2.clientHeight 视窗的高度，即在浏览器中所能看到的内容的高度<br>    3.scrollTop 视窗上面隐藏掉的部分，即滚动条滚动的距离</p>
+<p>思路：<br>    1.使用fixed定位加载框<br>    2.使用$(window).scroll();方法来触发是否加载<br>    3.通过 真实内容高度 - 视窗高度 - 上面隐藏部分 &lt; 5 ,作为加载触发的条件<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/05/09/js 实现无限加载分页（适合移动端）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/26/javascript里的几种常见的数组方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/26/javascript里的几种常见的数组方法/" itemprop="url">
+                  javascript里的几种常见的数组方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-26T21:08:30+08:00">
+                2016-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Array-的几种方法"><a href="#Array-的几种方法" class="headerlink" title="Array()的几种方法"></a>Array()的几种方法</h2><ol>
+<li>splice(2,3,4)删除数组中任意项(三个参数).</li>
+<li>splice(1,3)删除从第一项开始的往后三项(两个参数).(splice可以结合pop(),unshift(),push(),shift()来理解)</li>
+<li>push()在数组的末尾增加一项.</li>
+<li>unshift()在数组的开头增加一项.</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/26/javascript里的几种常见的数组方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/18/JS中判断数据类型的几种方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/18/JS中判断数据类型的几种方法/" itemprop="url">
+                  JS中判断数据类型的几种方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-18T21:08:30+08:00">
+                2016-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="首先我们来了解一下js中的数据类型"><a href="#首先我们来了解一下js中的数据类型" class="headerlink" title="首先我们来了解一下js中的数据类型"></a>首先我们来了解一下js中的数据类型</h2><h3 id="1-基本数据类型：Undefined、Null、Boolean、Number、String-值类型"><a href="#1-基本数据类型：Undefined、Null、Boolean、Number、String-值类型" class="headerlink" title="1.基本数据类型：Undefined、Null、Boolean、Number、String(值类型)"></a>1.基本数据类型：Undefined、Null、Boolean、Number、String(值类型)</h3><h3 id="2-复杂数据类型：Object-引用类型"><a href="#2-复杂数据类型：Object-引用类型" class="headerlink" title="2.复杂数据类型：Object(引用类型)"></a>2.复杂数据类型：Object(引用类型)</h3><p>(值类型和引用类型的定义是通过数据在内存中的存储方式来确定的)<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/18/JS中判断数据类型的几种方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/18/移动端WEB开发技巧（转）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/18/移动端WEB开发技巧（转）/" itemprop="url">
+                  移动端WEB开发技巧（转）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-18T21:08:30+08:00">
+                2016-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="移动端web开发技巧"><a href="#移动端web开发技巧" class="headerlink" title="移动端web开发技巧"></a>移动端web开发技巧</h2><p>这是一个最好的时代，因为我们站在潮流中；但也是一个最坏的时代，因为我们站在潮头上。</p>
+<h3 id="1-添加到主屏后的标题（IOS）"><a href="#1-添加到主屏后的标题（IOS）" class="headerlink" title="1.添加到主屏后的标题（IOS）"></a>1.添加到主屏后的标题（IOS）</h3><p><code>&lt;meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;标题&quot;&gt;</code></p>
+<h3 id="2-启用-WebApp-全屏模式（IOS）"><a href="#2-启用-WebApp-全屏模式（IOS）" class="headerlink" title="2.启用 WebApp 全屏模式（IOS）"></a>2.启用 WebApp 全屏模式（IOS）</h3><p>当网站添加到主屏幕后再点击进行启动时，可隐藏地址栏（从浏览器跳转或输入链接进入并没有此效果）<br><code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;</code><br><code>&lt;meta name=&quot;apple-touch-fullscreen&quot; content=&quot;yes&quot; /&gt;</code></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/18/移动端WEB开发技巧（转）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/12/18/jquery template.js前端模板引擎/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/18/jquery template.js前端模板引擎/" itemprop="url">
+                  jquery template.js前端模板引擎
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-18T21:08:30+08:00">
+                2015-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>作为现代应用，ajax的大量使用，使得前端工程师们日常的开发少不了拼装模板，渲染模板<br>在刚有web的时候，前端与后端的交互，非常直白，浏览器端发出URL，后端返回一张拼好了的HTML串。浏览器对其进行渲染。html中可能会混有一些php(或者php中混有一些html)。在服务端将数据与模板进行拼装，生成要返回浏览器端的html串。<br>这与我们现在做一个普通网页没什么区别。只不过现在，我们更常使用模板技术来解决前后端耦合的问题。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/12/18/jquery template.js前端模板引擎/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/10/18/JS中Object常用的一些属性和方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/10/18/JS中Object常用的一些属性和方法/" itemprop="url">
+                  JS中Object常用的一些属性和方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-18T21:08:30+08:00">
+                2015-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-属性"><a href="#1-属性" class="headerlink" title="1.属性"></a>1.属性</h2><p>刚接触prototype、constructor、proto这三个玩意儿的时候，傻傻分不清楚的感觉!! 下面来简单的说下。<br>    举例：<br>        function Foo(){};<br>        var f1 = new Foo;</p>
+<h4 id="1-先了解下什么是构造函数"><a href="#1-先了解下什么是构造函数" class="headerlink" title="1.先了解下什么是构造函数"></a>1.先了解下什么是构造函数</h4><p>　　用来初始化新创建的对象的函数是构造函数。在上面的代码中，函数Foo是构造函数<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/10/18/JS中Object常用的一些属性和方法/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -625,7 +1256,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -670,7 +1301,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
