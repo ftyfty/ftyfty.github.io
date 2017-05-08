@@ -375,6 +375,298 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/19/vue-router使用方法详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/19/vue-router使用方法详解/" itemprop="url">
+                  vue-router使用方法详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-19T21:08:30+08:00">
+                2016-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>vue-router是Vue.js官方的路由插件，它和vue.js是深度集成的，适合用于构建单页面应用。vue的单页面应用是基于路由和组件的，路由用于设定访问路径，并将路径和组件映射起来。传统的页面应用，是用一些超链接来实现页面切换和跳转的。在vue-router单页面应用中，则是路径之间的切换，也就是组件的切换。</p>
+<ol>
+<li>创建组件<br>首先引入vue.js和vue-router.js：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;js/vue-router.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>然后创建两个组件构造器Home和About：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var Home = Vue.extend(&#123;</div><div class="line">    template: &apos;&lt;div&gt;&lt;h1&gt;Home&lt;/h1&gt;&lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;&lt;/div&gt;&apos;,</div><div class="line">    data: function() &#123;</div><div class="line">        return &#123;</div><div class="line">            msg: &apos;Hello, vue router!&apos;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">var About = Vue.extend(&#123;</div><div class="line">    template: &apos;&lt;div&gt;&lt;h1&gt;About&lt;/h1&gt;&lt;p&gt;This is the tutorial about vue-router.&lt;/p&gt;&lt;/div&gt;&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>创建Router<br><code>var router = new VueRouter()</code><br>调用构造器VueRouter，创建一个路由器实例router。</p>
+</li>
+<li><p>映射路由</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">router.map(&#123;</div><div class="line">    &apos;/home&apos;: &#123; component: Home &#125;,</div><div class="line">    &apos;/about&apos;: &#123; component: About &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>调用router的map方法映射路由，每条路由以key-value的形式存在，key是路径，value是组件。<br>例如：’/home’是一条路由的key，它表示路径；{component: Home}则表示该条路由映射的组件。</p>
+<ol>
+<li>使用v-link指令<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;list-group&quot;&gt;</div><div class="line">    &lt;a class=&quot;list-group-item&quot; v-link=&quot;&#123; path: &apos;/home&apos;&#125;&quot;&gt;Home&lt;/a&gt;</div><div class="line">    &lt;a class=&quot;list-group-item&quot; v-link=&quot;&#123; path: &apos;/about&apos;&#125;&quot;&gt;About&lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在a元素上使用v-link指令跳转到指定路径。</p>
+<ol>
+<li><p>使用<router-view>标签</router-view></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;router-view&gt;&lt;/router-view&gt;</div><div class="line">在页面上使用&lt;router-view&gt;&lt;/router-view&gt;标签，它用于渲染匹配的组件。</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动路由</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var App = Vue.extend(&#123;&#125;)</div><div class="line">router.start(App, &apos;#app&apos;)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>路由器的运行需要一个根组件，router.start(App, ‘#app’) 表示router会创建一个App实例，并且挂载到#app元素。<br>注意：使用vue-router的应用，不需要显式地创建Vue实例，而是调用start方法将根组件挂载到某个元素。</p>
+<h2 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h2><p>嵌套路由是个常见的需求，假设用户能够通过路径/home/news和/home/message访问一些内容，一个路径映射一个组件，访问这两个路径也会分别渲染两个组件。<br><img src="/img/vue-router.png" alt=""><br>实现嵌套路由有两个要点：<br>1.在组件内部使用<code>&lt;router-view&gt;</code>标签<br>2.在路由器对象中给组件定义子路由</p>
+<p>现在我们就动手实现这个需求。</p>
+<p>组件模板：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;template id=&quot;home&quot;&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;h1&gt;Home&lt;/h1&gt;</div><div class="line">        &lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;ul class=&quot;nav nav-tabs&quot;&gt;</div><div class="line">            &lt;li&gt;</div><div class="line">                &lt;a v-link=&quot;&#123; path: &apos;/home/news&apos;&#125;&quot;&gt;News&lt;/a&gt;</div><div class="line">            &lt;/li&gt;</div><div class="line">            &lt;li&gt;</div><div class="line">                &lt;a v-link=&quot;&#123; path: &apos;/home/message&apos;&#125;&quot;&gt;Messages&lt;/a&gt;</div><div class="line">            &lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">        &lt;router-view&gt;&lt;/router-view&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;template id=&quot;news&quot;&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;li&gt;News 01&lt;/li&gt;</div><div class="line">        &lt;li&gt;News 02&lt;/li&gt;</div><div class="line">        &lt;li&gt;News 03&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;template id=&quot;message&quot;&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;li&gt;Message 01&lt;/li&gt;</div><div class="line">        &lt;li&gt;Message 02&lt;/li&gt;</div><div class="line">        &lt;li&gt;Message 03&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure></p>
+<p>组件构造器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var Home = Vue.extend(&#123;</div><div class="line">    template: &apos;#home&apos;,</div><div class="line">    data: function() &#123;</div><div class="line">        return &#123;</div><div class="line">            msg: &apos;Hello, vue router!&apos;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">var News = Vue.extend(&#123;</div><div class="line">    template: &apos;#news&apos;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">var Message = Vue.extend(&#123;</div><div class="line">    template: &apos;#message&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>路由映射：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">router.map(&#123;</div><div class="line">    &apos;/home&apos;: &#123;</div><div class="line">        component: Home,</div><div class="line">        // 定义子路由</div><div class="line">        subRoutes: &#123;</div><div class="line">            &apos;/news&apos;: &#123;</div><div class="line">                component: News</div><div class="line">            &#125;,</div><div class="line">            &apos;/message&apos;: &#123;</div><div class="line">                component: Message</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    &apos;/about&apos;: &#123;</div><div class="line">        component: About</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>在/home路由下定义了一个subRoutes选项，/news和/message是两条子路由，它们分别表示路径/home/news和/home/message，这两条路由分别映射组件News和Message。</p>
+<p>注意：这里有一个概念要区分一下，/home/news和/home/message是/home路由的子路由，与之对应的News和Message组件并不是Home的子组件。</p>
+<h2 id="具名路径"><a href="#具名路径" class="headerlink" title="具名路径"></a>具名路径</h2><p>在有些情况下，给一条路径加上一个名字能够让我们更方便地进行路径的跳转，尤其是在路径较长的时候。<br>我们再追加一个组件NewsDetail，该组件在访问/home/news/detail路径时被渲染，组件模板：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;template id=&quot;newsDetail&quot;&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        News Detail - &#123;&#123;$route.params.id&#125;&#125; ......</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure></p>
+<p>组件构造器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var NewsDetail = Vue.extend(&#123;</div><div class="line">    template: &apos;#newsDetail&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>具名路由映射<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">router.map(&#123;</div><div class="line">    &apos;/home&apos;: &#123;</div><div class="line">        component: Home,</div><div class="line">        subRoutes: &#123;</div><div class="line">            &apos;/news&apos;: &#123;</div><div class="line">                name: &apos;news&apos;,</div><div class="line">                component: News,</div><div class="line">                subRoutes: &#123;</div><div class="line">                    &apos;detail/:id&apos;: &#123;</div><div class="line">                        name: &apos;detail&apos;,</div><div class="line">                        component: NewsDetail</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            &apos;/message&apos;: &#123;</div><div class="line">                component: Message</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    &apos;/about&apos;: &#123;</div><div class="line">        component: About</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>注意：我们在定义/homes/news/和home/news/detail/:id路由时，给该路由指定了name属性。<br>/:id是路由参数，例如：如果要查看id = ‘01’的News详情，那么访问路径是/home/news/detail/01。</p>
+<p>Home组件和News组件模板：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;template id=&quot;home&quot;&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;h1&gt;Home&lt;/h1&gt;</div><div class="line">        &lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;ul class=&quot;nav nav-tabs&quot;&gt;</div><div class="line">            &lt;li&gt;</div><div class="line">                &lt;a v-link=&quot;&#123; name: &apos;news&apos;&#125;&quot;&gt;News&lt;/a&gt;</div><div class="line">            &lt;/li&gt;</div><div class="line">            &lt;li&gt;</div><div class="line">                &lt;a v-link=&quot;&#123; path: &apos;/home/message&apos;&#125;&quot;&gt;Messages&lt;/a&gt;</div><div class="line">            &lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">        &lt;router-view&gt;&lt;/router-view&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;template id=&quot;news&quot;&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;ul&gt;</div><div class="line">            &lt;li&gt;</div><div class="line">                &lt;a v-link=&quot;&#123; name: &apos;detail&apos;, params: &#123;id: &apos;01&apos;&#125; &#125;&quot;&gt;News 01&lt;/a&gt;</div><div class="line">            &lt;/li&gt;</div><div class="line">            &lt;li&gt;</div><div class="line">                &lt;a v-link=&quot;&#123; path: &apos;/home/news/detail/02&apos;&#125;&quot;&gt;News 02&lt;/a&gt;</div><div class="line">            &lt;/li&gt;</div><div class="line">            &lt;li&gt;</div><div class="line">                &lt;a v-link=&quot;&#123; path: &apos;/home/news/detail/03&apos;&#125;&quot;&gt;News 03&lt;/a&gt;</div><div class="line">            &lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            &lt;router-view&gt;&lt;/router-view&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;a v-link=&quot;&#123; name: &apos;news&apos;&#125;&quot;&gt;News&lt;/a&gt;和&lt;a v-link=&quot;&#123; name: &apos;detail&apos;, params: &#123;id: &apos;01&apos;&#125; &#125;&quot;&gt;News 01&lt;/a&gt;这两行HTML代码，使用了用了具名路径。</div></pre></td></tr></table></figure></p>
+<p>v-link指令<br>用了这么久的v-link指令，是该介绍一下它了。<br>v-link 是一个用来让用户在 vue-router 应用的不同路径间跳转的指令。该指令接受一个 JavaScript 表达式，并会在用户点击元素时用该表达式的值去调用 router.go。<br>具体来讲，v-link有三种用法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 字面量路径 --&gt;</div><div class="line">&lt;a v-link=&quot;&apos;home&apos;&quot;&gt;Home&lt;/a&gt;</div><div class="line"></div><div class="line">&lt;!-- 效果同上 --&gt;</div><div class="line">&lt;a v-link=&quot;&#123; path: &apos;home&apos; &#125;&quot;&gt;Home&lt;/a&gt;</div><div class="line"></div><div class="line">&lt;!-- 具名路径 --&gt;</div><div class="line">&lt;a v-link=&quot;&#123; name: &apos;detail&apos;, params: &#123;id: &apos;01&apos;&#125; &#125;&quot;&gt;Home&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<p>v-link 会自动设置 <a> 的 href 属性，你无需使用href来处理浏览器的调整，原因如下：<br>它在 HTML5 history 模式和 hash 模式下的工作方式相同，所以如果你决定改变模式，或者 IE9 浏览器退化为 hash 模式时，都不需要做任何改变。<br>在 HTML5 history 模式下，v-link 会监听点击事件，防止浏览器尝试重新加载页面。<br>在 HTML5 history 模式下使用 root 选项时，不需要在 v-link 的 URL 中包含 root 路径。</a></p>
+<h2 id="路由对象"><a href="#路由对象" class="headerlink" title="路由对象"></a>路由对象</h2><p>在使用了 vue-router 的应用中，路由对象会被注入每个组件中，赋值为 this.$route ，并且当路由切换时，路由对象会被更新。<br>路由对象暴露了以下属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$route.path </div><div class="line">字符串，等于当前路由对象的路径，会被解析为绝对路径，如 &quot;/home/news&quot; 。</div><div class="line">$route.params </div><div class="line">对象，包含路由中的动态片段和全匹配片段的键值对</div><div class="line">$route.query </div><div class="line">对象，包含路由中查询参数的键值对。例如，对于 /home/news/detail/01?favorite=yes ，会得到$route.query.favorite == &apos;yes&apos; 。</div><div class="line">$route.router </div><div class="line">路由规则所属的路由器（以及其所属的组件）。</div><div class="line">$route.matched </div><div class="line">数组，包含当前匹配的路径中所包含的所有片段所对应的配置参数对象。</div><div class="line">$route.name </div><div class="line">当前路径的名字，如果没有使用具名路径，则名字为空。</div></pre></td></tr></table></figure></p>
+<p>在页面上添加以下代码，可以显示这些路由对象的属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">    &lt;p&gt;当前路径：&#123;&#123;$route.path&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;p&gt;当前参数：&#123;&#123;$route.params | json&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;p&gt;路由名称：&#123;&#123;$route.name&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;p&gt;路由查询参数：&#123;&#123;$route.query | json&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;p&gt;路由匹配项：&#123;&#123;$route.matched | json&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">$route.path, $route.params, $route.name, $route.query这几个属性很容易理解，看示例就能知道它们代表的含义。</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/19/js中正则表达式 ---- 现成/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/19/js中正则表达式 ---- 现成/" itemprop="url">
+                  js中正则表达式 ---- 现成
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-19T21:08:30+08:00">
+                2016-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="1-校验密码强度"><a href="#1-校验密码强度" class="headerlink" title="1 . 校验密码强度"></a>1 . 校验密码强度</h3><p>密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间。<br><code>^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$</code></p>
+<h3 id="2-校验中文"><a href="#2-校验中文" class="headerlink" title="2. 校验中文"></a>2. 校验中文</h3><p>字符串仅能是中文。<br><code>^[\\u4e00-\\u9fa5]{0,}$</code></p>
+<h3 id="3-由数字、26个英文字母或下划线组成的字符串"><a href="#3-由数字、26个英文字母或下划线组成的字符串" class="headerlink" title="3. 由数字、26个英文字母或下划线组成的字符串"></a>3. 由数字、26个英文字母或下划线组成的字符串</h3><p><code>^\\w+$</code></p>
+<h3 id="4-校验E-Mail-地址"><a href="#4-校验E-Mail-地址" class="headerlink" title="4. 校验E-Mail 地址"></a>4. 校验E-Mail 地址</h3><p>同密码一样，下面是E-mail地址合规性的正则检查语句。<br><code>[\\w!#$%&amp;&#39;*+/=?^_</code>{|}~-]+(?:\.[\w!#$%&amp;’<em>+/=?^_`{|}~-]+)</em>@(?:<a href="?:[\\w-]*[\\w]">\w</a>?\.)+<a href="?:[\\w-]*[\\w]">\w</a>?`<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/19/js中正则表达式 ---- 现成/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/17/Vue.js入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -991,262 +1283,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/28/jQuery之插件开发进阶/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fty">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/6721.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="學">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/28/jQuery之插件开发进阶/" itemprop="url">
-                  jQuery之插件开发进阶
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-28T21:08:30+08:00">
-                2016-06-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="jQuery插件开发模式"><a href="#jQuery插件开发模式" class="headerlink" title="jQuery插件开发模式"></a>jQuery插件开发模式</h2><p>软件开发过程中是需要一定的设计模式来指导开发的，有了模式，我们就能更好地组织我们的代码，并且从这些前人总结出来的模式中学到很多好的实践。<br>根据《jQuery高级编程》的描述，jQuery插件开发方式主要有三种：<br>通过$.extend()来扩展jQuery<br>通过$.fn 向jQuery添加新的方法<br>通过$.widget()应用jQuery UI的部件工厂方式创建<br>通常我们使用第二种方法来进行简单插件开发，说简单是相对于第三种方式。第三种方式是用来开发更高级jQuery部件的，该模式开发出来的部件带有很多jQuery内建的特性，比如插件的状态信息自动保存，各种关于插件的常用方法等，非常贴心，这里不细说。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/06/28/jQuery之插件开发进阶/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/17/jQuery之插件开发入门/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fty">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/6721.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="學">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/17/jQuery之插件开发入门/" itemprop="url">
-                  jQuery之插件开发入门
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-17T21:08:30+08:00">
-                2016-06-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p>编写一个jQuery插件开始于给jQuery.fn加入​​新的功能属性，此处添加的对象属性的名称就是你插件的名称：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">jQuery.fn.myPlugin = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//你自己的插件代码</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>了避免和其他JavaScript库冲突，我们最好将jQuery传递给一个自我执行的封闭程序:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</div><div class="line">       $.fn.m​​yPlugin = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">           <span class="comment">//你自己的插件代码</span></div><div class="line">       &#125;;</div><div class="line">   &#125;)(jQuery);</div></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/06/17/jQuery之插件开发入门/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1291,7 +1332,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
