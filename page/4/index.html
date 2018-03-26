@@ -250,6 +250,135 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/10/jquery选择器总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/6721.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/10/jquery选择器总结/" itemprop="url">
+                  jquery选择器总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-10T21:08:30+08:00">
+                2015-07-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="jQuery-的选择器可谓之强大无比，常用的元素查找方法"><a href="#jQuery-的选择器可谓之强大无比，常用的元素查找方法" class="headerlink" title="jQuery 的选择器可谓之强大无比，常用的元素查找方法"></a>jQuery 的选择器可谓之强大无比，常用的元素查找方法</h3><p>$(“#myELement”) 选择id值等于myElement的元素，id值不能重复在文档中只能有一个id值是myElement所以得到的是唯一的元素<br>$(“div”) 选择所有的div标签元素，返回div元素数组<br>$(“.myClass”) 选择使用myClass类的css的所有元素<br>$(“*”) 选择文档中的所有的元素，可以运用多种的选择方式进行联合选择：例如$(“#myELement,div,.myclass”)</p>
+<h3 id="层叠选择器："><a href="#层叠选择器：" class="headerlink" title="层叠选择器："></a>层叠选择器：</h3><p>$(“form input”) 选择所有的form元素中的input元素<br>$(“#main &gt; *”) 选择id值为main的所有的子元素<br>$(“label + input”) 选择所有的label元素的下一个input元素节点，经测试选择器返回的是label标签后面直接跟一个input标签的所有input标签元素<br>$(“#prev ~ div”) 同胞选择器，该选择器返回的为id为prev的标签元素的所有的属于同一个父元素的div标签</p>
+<h3 id="基本过滤选择器："><a href="#基本过滤选择器：" class="headerlink" title="基本过滤选择器："></a>基本过滤选择器：</h3><p>$(“tr:first”) 选择所有tr元素的第一个<br>$(“tr:last”) 选择所有tr元素的最后一个<br>$(“input:not(:checked) + span”) //过滤掉：checked的选择器的所有的input元素<br>$(“tr:even”) 选择所有的tr元素的第0，2，4… …个元素（注意：因为所选择的多个元素时为数组，所以序号是从0开始）<br>$(“tr:odd”) 选择所有的tr元素的第1，3，5… …个元素<br>$(“td:eq(2)”) 选择所有的td元素中序号为2的那个td元素<br>$(“td:gt(4)”) 选择td元素中序号大于4的所有td元素<br>$(“td:ll(4)”) 选择td元素中序号小于4的所有的td元素</p>
+<h3 id="内容过滤选择器："><a href="#内容过滤选择器：" class="headerlink" title="内容过滤选择器："></a>内容过滤选择器：</h3><p>$(“div:contains(‘John’)”) 选择所有div中含有John文本的元素<br>$(“td:empty”) 选择所有的为空（也不包括文本节点）的td元素的数组<br>$(“div:has(p)”) 选择所有含有p标签的div元素<br>$(“td:parent”) 选择所有的以td为父节点的元素数组</p>
+<h3 id="可视化过滤选择器："><a href="#可视化过滤选择器：" class="headerlink" title="可视化过滤选择器："></a>可视化过滤选择器：</h3><p>$(“div:hidden”) 选择所有的被hidden的div元素<br>$(“div:visible”) 选择所有的可视化的div元素</p>
+<h3 id="属性过滤选择器："><a href="#属性过滤选择器：" class="headerlink" title="属性过滤选择器："></a>属性过滤选择器：</h3><p>$(“div[id]”) 选择所有含有id属性的div元素<br>$(“input[name=’newsletter’]”) 选择所有的name属性等于’newsletter’的input元素<br>$(“input[name!=’newsletter’]”) 选择所有的name属性不等于’newsletter’的input元素<br>$(“input[name^=’news’]”) 选择所有的name属性以’news’开头的input元素<br>$(“input[name$=’news’]”) 选择所有的name属性以’news’结尾的input元素<br>$(“input[name*=’news’]”) 选择所有的name属性包含’news’的input元素<br>$(“input[id][name$=’news’]”) 可以使用多个属性进行联合选择，该选择器是得到所有的含有id属性并且那么属性以news结尾的元素</p>
+<h3 id="子元素过滤选择器："><a href="#子元素过滤选择器：" class="headerlink" title="子元素过滤选择器："></a>子元素过滤选择器：</h3><p>$(“ul li:nth-child(2)”),$(“ul li:nth-child(odd)”),$(“ul li:nth-child(3n + 1)”)<br>$(“div span:first-child”) 返回所有的div元素的第一个子节点的数组<br>$(“div span:last-child”) 返回所有的div元素的最后一个节点的数组<br>$(“div button:only-child”) 返回所有的div中只有唯一一个子节点的所有子节点的数组</p>
+<h3 id="表单元素选择器："><a href="#表单元素选择器：" class="headerlink" title="表单元素选择器："></a>表单元素选择器：</h3><p>$(“:input”) 选择所有的表单输入元素，包括input, textarea, select 和 button<br>$(“:text”) 选择所有的text input元素<br>$(“:password”) 选择所有的password input元素<br>$(“:radio”) 选择所有的radio input元素<br>$(“:checkbox”) 选择所有的checkbox input元素<br>$(“:submit”) 选择所有的submit input元素<br>$(“:image”) 选择所有的image input元素<br>$(“:reset”) 选择所有的reset input元素<br>$(“:button”) 选择所有的button input元素<br>$(“:file”) 选择所有的file input元素<br>$(“:hidden”) 选择所有类型为hidden的input元素或表单的隐藏域</p>
+<h3 id="表单元素过滤选择器："><a href="#表单元素过滤选择器：" class="headerlink" title="表单元素过滤选择器："></a>表单元素过滤选择器：</h3><p>$(“:enabled”) 选择所有的可操作的表单元素<br>$(“:disabled”) 选择所有的不可操作的表单元素<br>$(“:checked”) 选择所有的被checked的表单元素<br>$(“select option:selected”) 选择所有的select 的子元素中被selected的元素</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/04/CSS 实用技巧：制作三角形/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -541,7 +670,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
